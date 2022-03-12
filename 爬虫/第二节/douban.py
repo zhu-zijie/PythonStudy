@@ -21,7 +21,7 @@ for page in range(0, 250, 25):
     page_content = resp.text
     # 开始匹配
     result = obj.finditer(page_content)
-    file = open("data.csv", mode='a', encoding='utf-8')
+    file = open("data.csv", mode='a', encoding='utf-8', newline='')
     csvwriter = csv.writer(file)
     for it in result:
         # print(it.group("name"))

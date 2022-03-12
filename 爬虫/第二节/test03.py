@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
+# 这个链接只能下载第一页
 url = "https://pic.netbian.com"
 
 resp = requests.get(url)
@@ -19,8 +20,8 @@ for list in lists:
     # 从子页面中拿到图片的下载路径
     child_page = BeautifulSoup(child_page_text, "html.parser")
     page = child_page.find("div", attrs={"class": "photo-pic"})
-    img = page.find("img")
-    src = url+img.get("src")
+    img = page.find("a", attrs={"id": "img"}).find("img")
+    src = "https://pic.netbian.com"+img.get("src")
     name = img.get("title").split(' ')[0]
     #下载图片
     img_resp = requests.get(src)

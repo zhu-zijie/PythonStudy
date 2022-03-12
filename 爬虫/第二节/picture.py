@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-url = "https://www.umeitu.com/meinvtupian/"
+url = "https://www.umeitu.com/bizhitupian/xiaoqingxinbizhi/"
 
 resp = requests.get(url)
 resp.encoding = "urf-8"#解决编码问题
