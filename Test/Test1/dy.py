@@ -8,7 +8,7 @@ import re
 
 web = webdriver.Chrome()
 # 访问页面
-web.get('https://www.douyin.com/user/MS4wLjABAAAAI-lEgbXAy9AcrRR_ujh1DfyWRuh1ZjxLdzmjMD948KY')
+web.get('https://www.douyin.com/user/MS4wLjABAAAAHAlF09yQrLMxW8wyJUO0NGlrsE7O0_9yTki_BkZM16g')
 time.sleep(3)
 # 滚动到底部
 for i in range(50):
