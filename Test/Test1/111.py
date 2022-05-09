@@ -1,20 +1,100 @@
 import json
+import os
 import requests
+#
+# headers = {
+#     'Origin': 'https://y.qq.com',
+#     'Referer': 'https://y.qq.com/portal/search.html',
+#     'Sec-Fetch-Mode': 'cors',
+#     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+# }
+#
+#
+# def get_music_info():
+#     music_info_list = []
+#     name = input('请输入歌手或歌曲：')  # input函数 输入 做用户交互 使用的
+#     page = input('请输入页码：')
+#     num = input('请输入当前页码需要返回的数据条数：')
+#     url = f'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?p={page}&n={num}&w={name}'
+#     response = requests.get(url).text  # 获取到的是字符串
+#     # 将response切分成json格式 类似字典 但是现在还是字符串
+#     music_json = response[9:-1]
+#     # json转字典
+#     music_data = json.loads(music_json)  # 转换成 字典
+#     # print(music_data)
+#     music_list = music_data['data']['song']['list']
+#     for music in music_list:
+#         music_name = music['songname']  # 歌曲的名字
+#         singer_name = music['singer'][0]['name']  # 歌手的名字
+#         songmid = music['songmid']
+#         media_mid = music['media_mid']
+#         music_info_list.append((music_name, singer_name, songmid, media_mid))
+#     return music_info_list
+#
+#
+# # 获取vkey
+# def get_purl(music_info_list):
+#     music_data = []
+#     for music in music_info_list:
+#         music_name = music[0]
+#         singer_name = music[1]
+#         songmid = music[2]
+#         url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?data={"req":{"module":"CDN.SrfCdnDispatchServer","method":"GetCdnDispatch","param":{"guid":"8846039534","calltype":0,"userip":""}},"req_0":{"module":"vkey.GetVkeyServer","method":"CgiGetVkey","param":{"guid":"8846039534","songmid":["%s"],"songtype":[0],"uin":"1152921504784213523","loginflag":1,"platform":"20"}},"comm":{"uin":"1152921504784213523","format":"json","ct":24,"cv":0}}' % songmid
+#         response = requests.get(url).json()  # 如果你获取的数据 是 {}  .json() 他会直接帮我们转换成字典
+#         purl = response['req_0']['data']['midurlinfo'][0]['purl']
+#         full_media_url = 'http://dl.stream.qqmusic.qq.com/' + purl
+#         music_data.append(
+#             {
+#                 'music_name': music_name,
+#                 'singer_name': singer_name,
+#                 'full_media_url': full_media_url
+#             }
+#         )
+#     return music_data
+#
+#
+# def save_music_mp3(music_data):
+#     if not os.path.exists('歌曲下载'):  # 判断是否有歌曲下载文件夹
+#         os.mkdir('歌曲下载')  # 如果没有创建 歌曲下载文件夹
+#     for music in music_data:
+#         music_name = music['music_name']
+#         singer_name = music['singer_name']
+#         full_url = music['full_media_url']
+#         music_response = requests.get(full_url, headers=headers).content
+#         with open('歌曲下载/%s-%s.mp3' % (music_name, singer_name), 'wb')as fp:
+#             fp.write(music_response)
+#             print('[%s]保存成功！' % music_name)
+#
+#
+# if __name__ == '__main__':
+#     music_info_list = get_music_info()
+#     music_data = get_purl(music_info_list)
+#     save_music_mp3(music_data)
+
+songmid = '000ASEZF3AaLN5'
+# url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?data={"req":{"module":"CDN.SrfCdnDispatchServer","method":"GetCdnDispatch","param":{"guid":"8846039534","calltype":0,"userip":""},"req_0":{"module":"vkey.GetVkeyServer","method":"CgiGetVkey","param":{"guid":"8846039534","songmid":["%s"],"songtype":[0],"uin":"1152921504784213523","loginflag":1,"platform":"20"}},"comm":{"uin":"1152921504784213523","format":"json","ct":24,"cv":0}}' % songmid
+#
+# resp = requests.get(url)
+# print(url)
+# print(resp.text)
 import execjs
+def get_sign(data):
+    with open('get_sign.js', mode='r', encoding='utf-8') as f:
+        text = f.read()
 
-url = 'https://music.163.com/weapi/comment/resource/comments/get?csrf_token='
-headers = {
-    'cookie': 'NMTID=00O6j1Bh5pZOvMoQEkKgIvpTTgfjQ4AAAGAay1cVg; _ntes_nnid=b31f49eb27d22dcb60a94843372c433d,1651065587582; _ntes_nuid=b31f49eb27d22dcb60a94843372c433d; WEVNSM=1.0.0; WNMCID=utnvzz.1651065590822.01.0; WM_TID=DHS%2BhhhY0PZERFFVQUfFBDjbWaOW01xR; __csrf=ec623bb8af85bb072a2f4bb86ec0f8cd; MUSIC_U=c6c38d4a65df466eb8e147df132c4842fd1298f0097873e516cf9e8fe2db08c9c84e8a4f4ba4f13e0810b1fde2140d597140b1208feb40d6c8d4657e893eeaeb19d751b7953c76e7d4dbf082a8813684; _iuqxldmzr_=32; WM_NI=%2FdjiKa6TfVxNwDOHHx39bv7%2Bavi%2FXiDplK5ZMYSFYOMmkIsocyw4yd%2FDFIf9nw8P9RyQd7blNVs1FcE2grgzbfkJCr9%2BrdyTVWg%2Bk462VFOjx58nR%2Bj2vavrkpiy3ShYV24%3D; WM_NIKE=9ca17ae2e6ffcda170e2e6eebaf240948cfb89bc3d86e78fb7d84b829a9b86c15ba18a85aaea5cfc9586a3c72af0fea7c3b92aedbca68aca6bf68caab7fb46b59c81a9cb74f1e7ae97b621a3aaa7d0db6388b0a4acb8528f879da7dc458fb3a5aaf265a1a7b9d5fc70ed9c8aaae533aea9f8b1bc5abb8facd8e1688e8abdd2c56987eea993e672a2baa5abc27afbf5be85fc609689a9ccea40f6ee9aa7ce62bcebf88fd121aaeeba82f57aa9b0a79ab259ac879ad3b737e2a3; JSESSIONID-WYYY=0ChIF0fSjBFkujSb%2Bdzsy4NmMW89A8h%2Fx%5CGXJ3ltFvZK5ahPmerRb7cwvqHdroieJa485JMkK6xMO97Gj4YqrUosqiBXKhdh9sgpOMu2rr%2F9hs%2FIlCgK11w1sB9wA7Gt3EhiWaDAsRxu7Stv3mWb31ElnXv%2F9wmFgsEnGMqsN64CeCxZ%3A1651496249760; playerid=85463784; _dd_s=logs=1&id=e06245ce-fff8-4e97-abf3-226d5b317783&created=1651494450776&expire=1651496848470',
-    'origin': 'https://music.163.com/',
-    'referer': 'https://music.163.com/',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36'
-}
+    js_data = execjs.compile(text)
+    sign = js_data.call('get_sign', data)
+    return sign
 
-data = {
-    'encText': 'kHGSfuyNpyuve8rD7OwPacbapCD+78Hre5SsACymsDzNBVo8Av4XgKybSo2s9fS53z2A8/+nCfCuY0+NakX0FbZ9+7FOuJbWydK/BSNlIl45CBJmN5Wir3TxtxaayAY8qh1y8u3tEL4nWs9aTyGOzZMNlb09XNRrvqToLJLAirilm1CLgEXmjlDC6YD33B8sgTSQiloLirTF/phGp8MvUw==',
-    'encSecKey': '763bc461f963df891d66cc3331c063e19677f50bbbdcdc69045fa95da1c7d1245dc998318bb39a6b92763696067c45d0842c1edfcef4f4cf3e88b66468a144ed939139281cf9c0341c057c4d822818f4332e86ffd9516979000fbeab92a0519dcd8c2aff3b20d18d518e28369467afeade3618f4456663c38ce596983575a29d'
-}
-
+data =  '{"comm":{"ct":24,"cv":0},"singerSongList":{"method":"GetSingerSongList","param":'\
+            '{"order":1,"singerMid":"000ASEZF3AaLN5","begin":0,"num":10}'\
+            ',"module":"musichall.song_list_server"}}'
+sign = get_sign(data)
+url = 'https://u.y.qq.com/cgi-bin/musics.fcg?_=1651978997633584&sign='+sign
 
 resp = requests.post(url, data=data)
 print(resp.text)
+
+
+
+
