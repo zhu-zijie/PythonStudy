@@ -1,19 +1,156 @@
 import requests
 import re
-url = "https://www.douyin.com/video/6952079436124638472"
+import csv
+import time
+from bs4 import BeautifulSoup
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36',
-    'cookie': 'passport_csrf_token=1b9858131eae47287fec106116aa624e; passport_csrf_token_default=1b9858131eae47287fec106116aa624e; d_ticket=47b5d5dcfdbbacac4c8120dcec8d33113a511; n_mh=FAKXF62TqrHxsiZxcAxXtZhonM3Bl6wBODVhl-Gf818; passport_auth_status=1b15765097ab3e300b499bc5ee64c79d,; passport_auth_status_ss=1b15765097ab3e300b499bc5ee64c79d,; sso_auth_status=0078d8b15aa67d87ed15b03497b99fbc; sso_auth_status_ss=0078d8b15aa67d87ed15b03497b99fbc; sso_uid_tt=ce3289c9eb6d395637ed02730653927a; sso_uid_tt_ss=ce3289c9eb6d395637ed02730653927a; toutiao_sso_user=2e9d4ca784e19df0a322a6b2cafca2c8; toutiao_sso_user_ss=2e9d4ca784e19df0a322a6b2cafca2c8; sid_ucp_sso_v1=1.0.0-KDhhYWI5YTJjNWFiYWQ4NGRmZGQwZDE0MzgwYWVmNTkyNzZmYWIzOGIKHQjhoajN6wIQ1fnlkgYY7zEgDDCn3v_WBTgCQPEHGgJsZiIgMmU5ZDRjYTc4NGUxOWRmMGEzMjJhNmIyY2FmY2EyYzg; ssid_ucp_sso_v1=1.0.0-KDhhYWI5YTJjNWFiYWQ4NGRmZGQwZDE0MzgwYWVmNTkyNzZmYWIzOGIKHQjhoajN6wIQ1fnlkgYY7zEgDDCn3v_WBTgCQPEHGgJsZiIgMmU5ZDRjYTc4NGUxOWRmMGEzMjJhNmIyY2FmY2EyYzg; odin_tt=6411b2d225991aa4bac86cc4adcb4331f99df1ed1e4788ee8f65f66df241b7d536abb7e948e652c7bfdede6d7f97cd14; sid_guard=2e9d4ca784e19df0a322a6b2cafca2c8|1650031830|5184000|Tue,+14-Jun-2022+14:10:30+GMT; uid_tt=ce3289c9eb6d395637ed02730653927a; uid_tt_ss=ce3289c9eb6d395637ed02730653927a; sid_tt=2e9d4ca784e19df0a322a6b2cafca2c8; sessionid=2e9d4ca784e19df0a322a6b2cafca2c8; sessionid_ss=2e9d4ca784e19df0a322a6b2cafca2c8; sid_ucp_v1=1.0.0-KDEwNDg5YTg2NDc0ODU2ZDFkMDg0NzRhODEzYTgyZDZhMGUxNTFlYmUKHQjhoajN6wIQ1vnlkgYY7zEgDDCn3v_WBTgCQPEHGgJscSIgMmU5ZDRjYTc4NGUxOWRmMGEzMjJhNmIyY2FmY2EyYzg; ssid_ucp_v1=1.0.0-KDEwNDg5YTg2NDc0ODU2ZDFkMDg0NzRhODEzYTgyZDZhMGUxNTFlYmUKHQjhoajN6wIQ1vnlkgYY7zEgDDCn3v_WBTgCQPEHGgJscSIgMmU5ZDRjYTc4NGUxOWRmMGEzMjJhNmIyY2FmY2EyYzg; ttwid=1|3FF--EPW6rxtcrYR07nZkDnrp16qPNLQOURlFCDqOaU|1650193351|c5e9e99224b9b59165ac3b605503528f89d0d965d545bf012c6e6a6a45bb6605; __ac_nonce=0626e824d00fae7405370; __ac_signature=_02B4Z6wo00f01AP-7agAAIDAg.wX6G7A4WgD3ukAAGKXxyucIasC4g6G3vzCs-z4Pmdgns8aeQyis1zo9fApFAkwzjeOSRwtocIZ6GhvFvtOALwEMapHRs8mMVh18rDxShS8y3t.U0xJ9mse91; douyin.com; strategyABtestKey=1651409488.884; _tea_utm_cache_2285=undefined; s_v_web_id=verify_l2naku6c_z1WOJRjC_vn7d_43yM_8nvZ_6DtYWVpUi0qf; _tea_utm_cache_1300=undefined; FOLLOW_LIVE_POINT_INFO=MS4wLjABAAAAW-R4E6nwK-AviEC0NTamQFnqbdGCfg7iVBdsLFHUI9E/1651420800000/0/0/1651410166302; msToken=oZ5Cg_PfZTEqYNb64tzuQ6Cl8QuOowPdpixDtyKpXtvjzTjQstV9W_5F6a5bApIZeKckmC1cGO-WRhgnros29DPLgTcO084Y6Z89dOnkJe6F9n4QG-F8VrEdXm4BMNuS8g==; tt_scid=fwAjpDNmBG2HSsmuWNyCnTWgTMwIwCMzUod4zPcwo.siRUeCh4XoIsDZXb.Pk29D4981; home_can_add_dy_2_desktop=1; pwa_guide_count=2; THEME_STAY_TIME=299792; IS_HIDE_THEME_CHANGE=1; _dd_s=logs=1&id=0b5f3081-7212-43fe-afcd-f7791453dcdd&created=1651409491825&expire=1651410788081; msToken=9cxqRlf4mpAJ_jRP7WWigy2CQDCzzADJsxMACQRBIHOo17lxWDm9UdytKOyBLT0NRFjXghw6cUulivhMZ2qdLUlRqC7bdHmk44qUTYgfN1gR3L8c2zNpfYmalznU6imY5g=='
-}
-resp = requests.get(url, headers = headers)
-resp = requests.utils.unquote(resp.text)
-print(resp)
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+# }
+# 案例1
+# from urllib.request import urlopen
+# url = "http://www.baidu.com"
+#
+# resp = urlopen(url)
+# print(resp.read().decode('utf-8'))
 
+# 案例2
+# url = 'https://fanyi.baidu.com/sug'
+# input = input("请输入你要查询的单词：")
+# data = {
+#     'kw': input
+# }
+# resp = requests.post(url, data=data)
+#
+# print(resp.json())
+
+# 案例3
+# url = "https://movie.douban.com/top250"
+
+#
+# resp = requests.get(url, headers=headers)
+# print(resp.text)
+
+# 案例4
+# url = "https://movie.douban.com/j/chart/top_list"
+#
+# params = {
+#     'type': 24,
+#     'interval_id': '100:90',
+#     'action': '',
+#     'start': 0,
+#     'limit': 20
+# }
+# resp = requests.get(url, params=params, headers=headers)
+# # print(resp.request.url)
+# print(resp.json())
+# resp.close()
+
+# 案例5
+# 爬取豆瓣前250的电影----稍微有点问题，有15部电影没有匹配到（如釜山行，应该是正则匹配出现问题）
+# file = open("data.csv", mode='w', encoding="utf-8", newline="")
+# csvwriter = csv.writer(file)
+# for page in range(0,250,25):
+#     url = f"https://movie.douban.com/top250?start={page}"
+#     # 获取数据
+#     resp = requests.get(url, headers=headers)
+#     # print(resp.text)
+#     page_content = resp.text
+#     # 解析数据
+#     obj = re.compile(
+#         r'<li>.*?<span class="title">(?P<name>.*?)</span>.*?<br>(?P<year>.*?)&nbsp;/&nbsp;(?P<country>.*?)&nbsp;/&nbsp;'
+#         r'(?P<type>.*?)</p>.*? <span class="rating_num" property="v:average">(?P<score>.*?)</span>.*?</span>.*?'
+#         r'<span>(?P<number>.*?)人评价</span>.*?<span class="inq">(?P<quoto>.*?)</span>', re.S)
+#     results = obj.finditer(page_content)
+#
+#     for result in results:
+#         # print(result.group("name"))
+#         # print(result.group("year").strip())
+#         # print(result.group("country"))
+#         # print(result.group("type").strip())
+#         # print(result.group("score"))
+#         # print(result.group("number").strip())
+#         # print(result.group("quoto"))
+#         dic = result.groupdict()
+#         dic["year"] = dic["year"].strip()
+#         dic["type"] = dic["type"].strip()
+#         dic["number"] = dic["number"].strip()
+#         csvwriter.writerow(dic.values())
+# resp.close()
+# file.close()
+# print("Over!")
+
+# 案例6
+# 爬取电影天堂
+# domain = "https://www.dytt89.com"   # 域名，待会下载使用
+# # 获取数据
+# main_resp = requests.get(domain)
+# main_resp.encoding = "gbk"  # 编码为gbk
+# # print(main_resp.text)
+#
 # # 解析数据
-title = re.findall('<title data-react-helmet="true">(.*?)</title>', resp, re.S)[0]
-src = re.findall('"playAddr":\[{"src":"(.*?)"}', resp, re.S)[0].replace('//', 'https://')
-new_title = re.sub(r'[\/?*:;|#]', "_", title)
-print(new_title)
-print(src)
-# resp1 = requests.get(src)
+# main_obj = re.compile(r"2023必看热片.*?<ul>(?P<ul>.*?)</ul>", re.S)
+# ul = main_obj.search(main_resp.text)
+# ul = ul.group("ul").strip()     # 获取ul
+#
+# # 从ul中获取li
+# ul_obj = re.compile(r"<li><a href='(.*?)'", re.S)
+# lis = ul_obj.findall(ul)
+# li_obj = re.compile(r'◎片　　名　(?P<movie>.*?)<br />.*?◎主　　演　(?P<actors>.*?)<br />◎简　　介<br />(?P<brief_introduction>.*?)'
+#                      r'<br />.*?<td style="WORD-WRAP:.*?href="(?P<download>.*?)">', re.S)
+# # 写入到文件中
+# file = open('movie.csv', mode='w', encoding='utf-8', newline='')
+# csvwriter = csv.writer(file)
+#
+# for li in lis:
+#     url = domain+li     # 拼接成子页面的url
+#     resp = requests.get(url)
+#     resp.encoding = "gbk"
+#     # movie = li_obj.search(resp.text).group("movie")
+#     # actors = li_obj.search(resp.text).group("actors").replace("<br />　　　　　　", "&").replace("&middot;", "_")
+#     # brief_introduction = li_obj.search(resp.text).group("brief_introduction").strip().strip("&hellip;").strip("&rdquo;")
+#     # download = li_obj.search(resp.text).group("download")
+#     # print(movie, actors, brief_introduction, download)
+#     li = li_obj.search(resp.text)
+#     dic = li.groupdict()
+#     dic["actors"] = li_obj.search(resp.text).group("actors").replace("<br />　　　　　　", "&").replace("&middot;", "_")
+#     dic["brief_introduction"] = li_obj.search(resp.text).group("brief_introduction").strip().strip("&hellip;").strip("&rdquo;").strip("&ldquo;")
+#     csvwriter.writerow(dic.values())
+#
+# file.close()
+# main_resp.close()
+# resp.close()
+# print("Over!")
+
+# 案例7
+# 爬取唯美图片
+# domain = "https://www.youmeitu.com"
+# url = "https://www.youmeitu.com/weimeitupian/"
+# headers = {
+#     "referer": "https://www.youmeitu.com/",
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+# }
+#
+# resp = requests.get(url, headers=headers)
+# # print(resp.text)
+#
+# # 解析数据
+# main_page = BeautifulSoup(resp.text, "html.parser")
+# lis = main_page.find("div", attrs={"class": "TypeList"}).find_all("a", attrs={"class": "TypeBigPics"})
+# for li in lis:
+#     href = li.get("href")
+#     url = domain+href
+#     child_resp = requests.get(url)
+#     child_page = BeautifulSoup(child_resp.text, "html.parser")
+#     src = domain+child_page.find("div", attrs={"class": "ImageBody"}).find("img").get("src")
+#     img_resp = requests.get(src)
+#     img_name = src.split("/")[-1]
+#     # print(img_name)
+#     with open("picture/"+img_name, mode="wb") as file:
+#         file.write(img_resp.content)
+#         print("Over!", img_name)
+#
+# img_resp.close()
+# child_resp.close()
+# resp.close()
+# print("当前页已经下载完毕！")
