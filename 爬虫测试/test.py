@@ -1,3 +1,6 @@
+import asyncio
+
+import aiohttp
 import requests
 import re
 import csv
@@ -123,14 +126,16 @@ from bs4 import BeautifulSoup
 # print("Over!")
 
 # 案例7
-# 爬取唯美图片
+# 爬取优美图片
 # domain = "https://www.youmeitu.com"
 # url = "https://www.youmeitu.com/weimeitupian/"
 # headers = {
 #     "referer": "https://www.youmeitu.com/",
 #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
 # }
-#
+# # proxies = {
+# #     "http": "182.90.224.115:3128"
+# # }
 # resp = requests.get(url, headers=headers)
 # # print(resp.text)
 #
@@ -154,3 +159,210 @@ from bs4 import BeautifulSoup
 # child_resp.close()
 # resp.close()
 # print("当前页已经下载完毕！")
+
+# 案例8
+# 抓取梨视频下载链接
+# domain = "https://www.pearvideo.com/video_1689388"
+# contId = domain.split('_')[-1]     # 得到下载视频的cont值
+# url = f"https://www.pearvideo.com/videoStatus.jsp?contId={contId}&mrd=0.746328563624121"
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+#     "Referer": domain
+# }
+# resp = requests.get(url, headers=headers)
+# systemTime = resp.json()['systemTime']
+# srcUrl = resp.json()['videoInfo']['videos']['srcUrl']
+# download_url =srcUrl.replace(systemTime, 'cont-'+contId)
+# print(download_url)
+
+# 案例9
+# 代理ip
+# proxies = {
+#     "http": "117.74.65.215:8888"
+# }
+# url = "https://www.baidu.com"
+# resp = requests.get(url, proxies=proxies)
+# resp.encoding = "utf-8"
+# print(resp.text)
+
+# 案例9
+# 多线程
+from threading import Thread
+# 方式1
+# def func():
+#     for i in range(1000):
+#         print("子线程", i)
+#
+# if __name__ == '__main__':
+#     t = Thread(target=func)
+#     t.start()
+#     for i in range(1000):
+#         print("主线程", i)
+
+# 方式2
+# class MyThread(Thread):
+#     def run(self):
+#         for i in range(1000):
+#             print("子线程", i)
+#
+# if __name__ == '__main__':
+#     t = MyThread()
+#     t.start()
+#     for i in range(1000):
+#         print("主线程", i)
+
+# 多进程
+from multiprocessing import Process
+# 方式1
+# def func():
+#     for i in range(1000):
+#         print("子进程", i)
+#
+# if __name__ == '__main__':
+#     p = Process(target=func)
+#     p.start()
+#     for i in range(1000):
+#         print("主进程", i)
+
+# 方式2
+# class MyProcess(Process):
+#     def run(self):
+#         for i in range(1000):
+#             print("子进程", i)
+# if __name__ == '__main__':
+#     p = MyProcess()
+#     p.start()
+#     for i in range(1000):
+#         print("主进程", i)
+
+# def func(name):
+#     for i in range(1000):
+#         print(name, i)
+#
+# if __name__ == '__main__':
+#     t1 = Thread(target=func, args=("周杰伦",))
+#     t1.start()
+#     t2 = Thread(target=func, args=("蔡依林",))
+#     t2.start()
+#     for i in range(1000):
+#         print("主线程", i)
+
+# 案例10
+# 线程池
+# from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+# def func(name):
+#     for i in range(1000):
+#         print(name, i)
+# if __name__ == '__main__':
+#     with ThreadPoolExecutor(50) as t:
+#         for i in range(100):
+#             t.submit(func, name=f"线程{i}")
+#     print("打印结束！")
+
+# 案例11
+# 测试北京新发地
+# import csv
+# from concurrent.futures import ThreadPoolExecutor
+# def download(i):
+#     url = "http://www.xinfadi.com.cn/getPriceData.html"
+#     data = {
+#         "limit": 20,
+#         "current": i,
+#         "pubDateStartTime": "",
+#         "pubDateEndTime": "",
+#         "prodPcatid": "",
+#         "prodCatid": "",
+#         "prodName": ""
+#     }
+#     resp = requests.post(url, data=data)
+#     list = resp.json()['list']
+#     for lst in list:
+#         prodName = lst['prodName']
+#         lowPrice = lst['lowPrice']
+#         highPrice = lst['highPrice']
+#         avgPrice = lst['avgPrice']
+#         place = lst['place']
+#         prodCat = lst['prodCat']
+#         lis = [prodCat, prodName, lowPrice, highPrice, avgPrice, place]
+#         csvwriter.writerow(lis)
+#
+# if __name__ == '__main__':
+#     f = open("price.csv", mode='w', encoding='utf-8', newline="")
+#     csvwriter = csv.writer(f)
+#     with ThreadPoolExecutor(50) as t:
+#         for i in range(1, 101):
+#             t.submit(download, i)
+#     print("保存完毕！")
+#     f.close()
+
+# 案例11
+# 协程
+# import asyncio
+# import time
+# async def func1():
+#     print("刘德华")
+#     # time.sleep(3)
+#     await asyncio.sleep(3)
+#     print("刘德华")
+#
+# async def func2():
+#     print("张学友")
+#     # time.sleep(2)
+#     await asyncio.sleep(2)
+#     print("张学友")
+#
+# async def func3():
+#     print("郭富城")
+#     # time.sleep(4)
+#     await asyncio.sleep(4)
+#     print("郭富城")
+#
+# async def main():
+#     tasks = [
+#         asyncio.create_task(func1()), asyncio.create_task(func2()), asyncio.create_task(func3())
+#     ]
+#     await asyncio.wait(tasks)
+#
+# if __name__ == '__main__':
+#     t1 = time.time()
+#     asyncio.run(main())
+#     t2 = time.time()
+#     print(t2-t1)
+
+# # 案例12
+# # 爬取西游记小说
+# import json
+# import aiofiles
+# # url = 'https://dushu.baidu.com/api/pc/getCatalog?data={"book_id":"4306063500"}'得到每一章节的cid
+# # url = 'https://dushu.baidu.com/api/pc/getChapterContent?data={"book_id":"4306063500","cid":"4306063500|1569782244","need_bookinfo":1}'
+#
+#
+# async def download(cid, book_id, title):
+#     data = {"book_id": book_id,
+#             "cid": f"{book_id}|{cid}",
+#             "need_bookinfo": 1
+#     }
+#     data = json.dumps(data)
+#     get_content_url = f'https://dushu.baidu.com/api/pc/getChapterContent?data={data}'
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get(get_content_url) as resp:
+#             dic = await resp.json()
+#             async with aiofiles.open("novel/"+title, mode='w', encoding='utf-8') as f:
+#                 await f.write(dic['data']['novel']['content'])
+#
+# async def getCatalog(url):
+#     resp = requests.get(url)
+#     tasks = []
+#     for catalog in resp.json()['data']['novel']['items']:
+#         title = catalog['title']
+#         cid = catalog['cid']
+#         tasks.append(asyncio.create_task(download(cid, book_id, title)))
+#     await asyncio.wait(tasks)
+#
+# if __name__ == '__main__':
+#     book_id = "4306063500"
+#     url = 'https://dushu.baidu.com/api/pc/getCatalog?data={"book_id":"'+book_id+'"}'
+#     asyncio.get_event_loop().run_until_complete(getCatalog(url))
+
+
+
