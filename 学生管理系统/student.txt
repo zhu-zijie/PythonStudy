@@ -1,2 +1,5 @@
-{'id': '1001', 'name': '张三', 'English': 78, 'Java': 89, 'Python': 99, 'C语言': 100}
-{'id': '1002', 'name': '李四', 'English': 41, 'Java': 64, 'Python': 42, 'C语言': 47}
+{'id': '1001', 'name': '张三', 'English': 87, 'Java': 67, 'Python': 87, 'C语言': 88}
+{'id': '1002', 'name': '李四', 'English': 68, 'Java': 79, 'Python': 80, 'C语言': 89}
+{'id': '1003', 'name': '皮皮', 'English': 80, 'Java': 76, 'Python': 77, 'C语言': 86}
+{'id': '1004', 'name': '王五', 'English': 65, 'Java': 90, 'Python': 97, 'C语言': 96}
+{'id': '1005', 'name': '赵六', 'English': 95, 'Java': 94, 'Python': 86, 'C语言': 76}

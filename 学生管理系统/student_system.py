@@ -94,10 +94,11 @@ def modify():
     else:
         return
     student_id = input("请输入要修改学生的ID：")
+    flag = False
     with open(filename, mode='w', encoding='utf-8') as wfile:
         for item in student_old:
             dic = eval(item)
-            if dic['id']==student_id:
+            if dic['id'] == student_id:
                 print("已学生的信息，可以进行修改！")
                 while True:
                     try:
@@ -105,16 +106,21 @@ def modify():
                         dic['Java'] = int(input("请输入学生的Java成绩："))
                         dic['Python'] = int(input("请输入学生的Python成绩："))
                         dic['C语言'] = int(input("请输入学生的C语言成绩："))
+
                     except:
                         print("您的输入有误，请重新输入！")
                     else:
                         break
 
                 wfile.write(str(dic)+'\n')
-                print("修改成功！")
+                flag = True
             else:
                 wfile.write(str(dic)+'\n')
-                # print(f"没有找到{student_id}学生信息！")
+
+    if flag:
+        print("修改成功！")
+    else:
+        print(f"没有找到{student_id}学生信息！")
     answer = input("是否继续修改学生的信息？（y/n）")
     if answer == 'y' or answer == 'Y':
         modify()
@@ -125,8 +131,8 @@ def delete():
     student_id = input("请输入要删除的学生ID：")
     if student_id != " ":
         if os.path.exists(filename):    #判断文件是否存在
-            with open(filename, mode='r', encoding='utf-8') as file:
-                student_old = file.readlines()
+            with open(filename, mode='r', encoding='utf-8') as rfile:
+                student_old = rfile.readlines()
         else:
             student_old = []
         flag = False

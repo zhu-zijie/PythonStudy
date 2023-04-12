@@ -1,0 +1,14 @@
+音乐私藏馆 --->  慢慢
+url = 'https://api.bilibili.com/x/player/wbi/v2?aid=654330561&cid=1076617288&w_rid=9e9e14fa28e2dbb3dae0eab4812661a7&wts=1681304166'
+
+jump_url: "https://music.bilibili.com/h5/music-detail?music_id=MA406539314751642290&cid=1076617288&aid=654330561"
+music_id: "MA406539314751642290"
+music_title: "慢慢"
+block_time: 0
+bvid: "BV12a4y1T7Yh"
+cid: 1076617288
+
+下载链接：
+https://cn-sccd-ct-01-20.bilivideo.com/upgcxcode/88/72/1076617288/1076617288_nb3-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1681312602&gen=playurlv2&os=bcache&oi=2030413803&trid=0000cf08b1eb19764bbc969ac5359642604dh&mid=0&platform=html5&upsig=5be2b510a2fbd95f0b0ad2de14e15430&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&cdnid=62620&bvc=vod&nettype=0&bw=33930&logo=80000000
+https://cn-xj-cm-02-06.bilivideo.com/upgcxcode/88/72/1076617288/1076617288-1-208.mp4?e=ig8euxZM2rNcNbNanwdVhwdlhbu3hwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1681320524&gen=playurlv2&os=bcache&oi=1972881365&trid=0000a3fb06b4faca4a908ffad15de88ce3b1T&mid=384568415&platform=html5&upsig=5a1eb30615db8eda5ebd4f3908e26f86&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&cdnid=61906&bvc=vod&nettype=0&bw=278670&orderid=0,1&buvid=&build=0&mobi_app=&logo=80000000
+https://cn-xj-cm-02-06.bilivideo.com/upgcxcode/88/72/1076617288/1076617288-1-100026.mp4?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfqXBvEqxTEto8BTrNvN0GvT90W5JZMkX_YN0MvXg8gNEV4NC8xNEV4N03eN0B5tZlqNxTEto8BTrNvNeZVuJ10Kj_g2UB02J0mN0B5tZlqNCNEto8BTrNvNC7MTX502C8f2jmMQJ6mqF2fka1mqx6gqj0eN0B599M=&uipk=5&nbs=1&deadline=1681312872&gen=playurlv2&os=bcache&oi=1972881365&trid=0000c0708900766547c48165707c076c00a1u&mid=384568415&platform=pc&upsig=ddc8ef6d4bab4ea37da5ccfbbde471b3&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&cdnid=61906&bvc=vod&nettype=0&orderid=0,3&buvid=0830F95D-3F26-4C43-37CB-42E46CC5CE9779950infoc&build=0&agrr=0&bw=92439&logo=80000000
