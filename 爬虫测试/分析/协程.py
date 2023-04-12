@@ -19,4 +19,4 @@ async def main():
     await asyncio.wait(tasks)
 
 def __name__ = '__main__':
-    asyncio.run(main)
+    asyncio.run(main())
