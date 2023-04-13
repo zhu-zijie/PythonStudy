@@ -18,6 +18,7 @@ async def main():
     # tasks = [asyncio.create_task(download(url)) for url in urls]
     await asyncio.wait(tasks)
 
+
 if __name__ == '__main__':
     asyncio.run(main())
     
