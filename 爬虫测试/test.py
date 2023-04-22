@@ -364,5 +364,11 @@ from multiprocessing import Process
 #     url = 'https://dushu.baidu.com/api/pc/getCatalog?data={"book_id":"'+book_id+'"}'
 #     asyncio.get_event_loop().run_until_complete(getCatalog(url))
 
+# 案例13
+# from selenium.webdriver import Chrome
+#
+# web = Chrome()
+# web.get("https://www.baidu.com")
+
 
 
