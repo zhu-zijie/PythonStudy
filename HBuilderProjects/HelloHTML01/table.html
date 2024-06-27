@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 表格4行4列
+		table:表格
+		tr:行
+		td:列
+		默认情况下没有边框的，通过属性来增加边框
+		border设置边框大小
+		cellspacing设置单元格和边框之间的空隙
+		align="center"设置居中
+		background 设置背景图片
+		bgcolor 设置背景颜色
+		rowspan 为行合并
+		colspan 为列合并
+		 -->
+		<table border="1px" bordercolor="white" cellspacing="0px" width="400px" height="300px" bgcolor="#ffcccc">
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年纪</th>
+				<th>成绩</th>
+			</tr>
+			<tr>
+				<td>1001</td>
+				<td>张三</td>
+				<td>19</td>
+				<td rowspan="3" align="center">98</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">1002</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>1003</td>
+				<td>王五</td>
+				<td>21</td>
+			</tr>
+		</table>
+	</body>
+</html>

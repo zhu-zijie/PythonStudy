@@ -5,7 +5,7 @@
 
 -- 创建数据库表
 
-CREATE TABLE t_student(
+CREATE TABLE t_student (
 	sno INT(6),	-- 6显示长度
 	sname VARCHAR(5),
 	sex CHAR(1),

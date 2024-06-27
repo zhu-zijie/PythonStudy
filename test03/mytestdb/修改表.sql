@@ -20,3 +20,8 @@ ALTER TABLE  t_student CHANGE score score1 DOUBLE(5,1);	-- CHANGE修改列名和
 
 -- 删除表
 DROP TABLE t_student;
+
+-- 删除表中的数据
+DELETE TABLE t_student;
+
+TRUNCATE TABLE t_student;

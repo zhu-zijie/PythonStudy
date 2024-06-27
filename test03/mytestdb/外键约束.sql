@@ -33,3 +33,23 @@ ALTER TABLE t_student ADD CONSTRAINT fk_stu_classno FOREIGN KEY (classno) REFERE
 
 -- 删除学生的信息，此时删除不了，有学生使用了当前班级号
 DELETE FROM t_class where cno = 1;
+
+-- CASCADE级联操作,操作主表时影响从表的外键信息
+-- 先删除之前的外键信息
+ALTER TABLE t_student DROP FOREIGN KEY fk_stu_classno;
+-- 重新添加外键约束
+ALTER TABLE t_student ADD CONSTRAINT fk_stu_classno FOREIGN key (classno) REFERENCES t_class (cno) on UPDATE CASCADE on DELETE CASCADE;
+-- 试试更新
+UPDATE t_class SET cno = 8 where cno = 1;
+-- 试试更新
+DELETE FROM t_class WHERE cno = 8;
+
+-- set null置空操作
+-- 先删除之前的外键信息
+ALTER TABLE t_student DROP FOREIGN KEY fk_stu_classno;
+-- 重新添加外键约束
+ALTER TABLE t_student ADD CONSTRAINT fk_stu_classno FOREIGN key (classno) REFERENCES t_class (cno) on UPDATE SET NULL on DELETE SET NULL;
+-- 试试更新
+UPDATE t_class SET cno = 8 where cno = 2;
+
+-- 级联操作可以与置空操作混着使用
