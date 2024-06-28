@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!-- 定义form表单 采集包含的有效数据，提交到后端，进行交互 -->
+		<!-- 
+			http://127.0.0.1:8848/Form/aaa?username%22%22=zhangsan&pwd=123456
+			?之前的是提交的资源的目标地址
+			?之后的是提交的具体的数据
+			aaa:目标资源 去当前项目下找aaa
+			我们写的文本框，密码框必须加入一个name属性
+			name属性和具体录入的信息会拼接成一个键值对的形式
+			多个键值对之间用&符号进行拼接
+			methon属性：默认情况下为method="get"
+			get方式：提交数据可见，不安全，提交长度有限制，效率高
+			post方式：提交数据不可见，安全，提交长度没有限制，效率低
+			
+		 -->
+		<form action="aaa" method="post">
+			用户名：<input type="text" name=username"" /><br />
+			密&emsp;码：<input type="password" name="pwd" /><br />
+			<!-- 提交按钮 -->
+			<input type="submit" />
+		</form>
+
+	</body>
+</html>
