@@ -19,9 +19,41 @@
 			post方式：提交数据不可见，安全，提交长度没有限制，效率低
 			
 		 -->
-		<form action="aaa" method="post">
+		<form action="aaa" method="get">
 			用户名：<input type="text" name=username"" /><br />
 			密&emsp;码：<input type="password" name="pwd" /><br />
+			
+			<!-- email:h5的类型可以增加校验 -->
+			<input type="email" name="email" placeholder="请输入你的邮箱:"/>
+			
+			<!-- url -->
+			<input type="url" name="url" placeholder="请输入你的url:"/>
+			
+			<!-- color -->
+			<input type="color" value="#ffcccc" />
+			
+			<!-- number min：最小值 max：最大值 step：步长 value：默认值 一定在步长范围内，否则不能提交 -->
+			<input type="number" min="1" max="10" step="3" value="4" />
+			
+			<!-- range -->
+			<input type="range" min="1" max="10" name="range" step="3" />
+			
+			<!-- month -->
+			<input type="month" />
+			
+			<!-- week -->
+			<input type="week" />
+			
+			<!-- 
+				HtML5新增属性：
+				multiple:多选
+				placehoder:默认提示
+				autofocus:自动获取焦点
+				required:必填项
+			-->
+			<input type="text" autofocus="autofocus" />
+			<input type="text" required="required" />
+			
 			<!-- 提交按钮 -->
 			<input type="submit" />
 		</form>

@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<form action="">
+		<form action="" method="get">
 			<!-- 表单元素 -->
 			<!-- 文本框
 				input标签使用广泛，通过type属性的不同值，表现出不同形态
@@ -24,8 +24,8 @@
 			<input type="text" name="uname" placeholder="请录入身份证信息" />
 
 			<!-- 密码框 效果录入不可用-->
-			<input type="password" name="pwd" placeholder="请输入密码"/>
-			
+			<input type="password" name="pwd" placeholder="请输入密码" />
+
 			<!-- 单选按钮
 				注意：一组单选按钮，必须通过name属性来控制，让他们在同一个分组中，然后在一个分组里只能选择一个
 				正常状态下，提交数据为：gender=on，后台不能区分你提交的数据
@@ -35,7 +35,7 @@
 			性别
 			<input type="radio" name="gender" value="1" />男
 			<input type="radio" name="gender" value="0" />女
-			
+
 			<!-- 多选按钮 -
 				必须通过name属性来控制，让他们在同一个分组中，然后在一个分组中就可以选择多个
 				不同的选项value值要控制为不同，这样后台接收就可以区分了
@@ -43,11 +43,43 @@
 				favlan=1&favlan=3
 			-->
 			你喜欢的语言
-			<input type="checkbox" name="favlan" value="1" >java
-			<input type="checkbox" name="favlan" value="2" >python
-			<input type="checkbox" name="favlan" value="3" >php
-			<input type="checkbox" name="favlan" value="4" >c#
-			
+			<input type="checkbox" name="favlan" value="1">java
+			<input type="checkbox" name="favlan" value="2">python
+			<input type="checkbox" name="favlan" value="3">php
+			<input type="checkbox" name="favlan" value="4">c#
+
+			<!-- 文件 -->
+			<input type="file" />
+
+			<!-- 隐藏域 -->
+			<input type="hidden" name="uname6" value="123123" />
+
+			<!-- 普通按钮 没有什么效果就是可以点击 学了js，可以加入事件 -->
+			<input type="button" value="普通按钮" />
+
+			<!-- 重置按钮 将页面恢复到初始状态 -->
+			<input type="reset" />
+
+			<!-- 特殊按钮 图片按钮 -->
+			<input type="image" src="img/picture_2.jpg" width="300px" />
+
+			<!-- 下拉列表 默认选中；selected="selected" 多选选项：multiple="multiple" -->
+			你喜欢的城市：
+			<select name="city" multiple="multiple">
+				<option value="0">---请选择---</option>
+				<option value="1">北京</option>
+				<option value="2">上海</option>
+				<option value="3">南京</option>
+				<option value="4" selected="selected">武汉</option>
+			</select>
+
+			<!-- 多行文本框 利用css来控制大小不可变：style="resize: none;" -->
+			自我介绍：
+			<textarea style="resize: none;" rows="10" cols="30">请在这里填写信息：</textarea>
+
+			<!-- label标签 一般会在想要获得焦点的标签上加入一个id属性，然后label中的for属性跟id属性配合使用 -->
+
+			<label for="uname7">用户名：</label><input type="text" name="username" id="uname7" />
 			<!-- 特殊按钮：提交按钮，具备提交功能 -->
 			<input type="submit" />
 		</form>
