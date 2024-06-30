@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+			消除浮动的影响：
+			1.给浮动的父节点加入一个属性overflow:hidden
+			2.给父节点div加一个高度，让父div支撑起来
+			3.给被影响的元素div加入一个属性clear: both;
+		 -->
+
+		<div style="width: 100%; height: 300px; background-color: pink;">
+			<div style="width: 100px; height: 100px; background-color: aqua; float: left;">11</div>
+			<div style="width: 200px; height: 200px; background-color: skyblue; float: left;">22</div>
+			<div style="width: 300px; height: 300px; background-color: brown; float: left;">33</div>
+		</div>
+		<div style="width: 400px; height: 400px; background-color: bisque; clear: both;">44</div>
+	</body>
+</html>
