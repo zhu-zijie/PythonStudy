@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun1() {
+				window.history.forward();
+			}
+
+			function fun2() {
+				window.history.back();
+			}
+
+			function fun3() {
+				window.history.go(1); // 正整数向前跳转*页，负整数向后跳转*页
+			}
+		</script>
+	</head>
+	<body>
+		<a href="https://www.jd.com">京东</a>
+		<input type="button" value="向前" onclick="fun1()" />
+		<input type="button" value="向后" onclick="fun2()" />
+		<input type="button" value="go" onclick="fun3()" />
+	</body>
+</html>
