@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun1() {
+				var element1 = document.getElementById("d1");
+				// console.log(element1);
+				element1.innerText = "这是我的div";
+			}
+
+			function fun2(className) {
+				var elements = document.getElementsByClassName(className);
+				// console.log(elements);
+				for (var i = 0; i < elements.length; i++) {
+					console.log(elements[i]);
+				}
+			}
+
+			function fun3() {
+				var elements = document.getElementsByTagName("input");
+				for (var i = 0; i < elements.length; i++) {
+					console.log(elements[i]);
+				}
+			}
+
+			function fun4() {
+				elements = document.getElementsByName("hobby");
+				for (var i = 0; i < elements.length; i++) {
+					console.log(elements[i]);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1" class="a">这是第一个div</div>
+		<div id="d2" class="a">这是第二个div</div>
+		<div id="d3" class="a">这是第三个div</div>
+		<div id="d4" class="a">这是第四个div</div>
+		<div id="d5" class="b" name="name">这是第五个div</div>
+		<div id="d6" class="b">这是第六个div</div>
+		爱好：
+		<input type="checkbox" name="hobby" id="hobby" value="1" />篮球
+		<input type="checkbox" name="hobby" id="hobby" value="2" />足球
+		<input type="checkbox" name="hobby" id="hobby" value="3" />羽毛球
+		<hr />
+		<input type="button" value="id值获取" onclick="fun1()" />
+		<input type="button" value="class属性值获取" onclick="fun2('a')" />
+		<input type="button" value="标签值获取" onclick="fun3()" />
+		<input type="button" value="name属性值获取" onclick="fun4()" />
+
+	</body>
+</html>
