@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun1() {
+				var outerDiv = document.getElementById("outerDiv");
+				var left = Math.floor(Math.random() * 1000);
+				var top = Math.floor(Math.random() * 500);
+				outerDiv.style.marginLeft = left + "px";
+				outerDiv.style.marginTop = top + "px";
+			}
+
+			function fun2() {
+				alert("Love you too!");
+			}
+		</script>
+
+		<style type="text/css">
+			#outerDiv {
+				width: 200px;
+				height: 200px;
+				border: 1px solid gold;
+				background-color: #ffcccc;
+				text-align: center;
+				margin-top: 200px;
+				margin-left: 200px;
+			}
+
+			#outerDiv input {
+				width: 50px;
+				height: 50px;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outerDiv">
+			<h3>Do you love me?</h3>
+			<input type="button" value="是" onclick="fun2()" />
+			<input type="button" value="否" onclick="fun1()" />
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#d1 {
+				border: 1px solid red;
+				width: 400px;
+				height: 300px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function fun1() {
+				var div1 = document.getElementById("d1");
+				// 通过js创造标签
+				var in1 = document.createElement("input");
+				in1.setAttribute("type", "text");
+				in1.setAttribute("value", "请输入内容：");
+
+				var in2 = document.createElement("input");
+				in2.setAttribute("type", "password");
+				in2.setAttribute("value", "123456789");
+
+				var in3 = document.createElement("input");
+				in3.setAttribute("type", "button");
+				in3.setAttribute("value", "删除：");
+				var br = document.createElement("br");
+
+				in3.onclick = function() {
+					// alert("执行了删除！");
+					div1.removeChild(in1);
+					div1.removeChild(in2);
+					div1.removeChild(in3);
+					div1.removeChild(br);
+				}
+
+
+				div1.appendChild(in1);
+				div1.appendChild(in2);
+				div1.appendChild(in3);
+				div1.appendChild(br);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+
+		</div>
+		<input type="button" value="增加" onclick="fun1()" />
+	</body>
+</html>
