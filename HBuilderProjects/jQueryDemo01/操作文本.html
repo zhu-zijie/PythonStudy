@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#i1 {
+				width: 200px;
+				height: 200px;
+				border: 1px solid green;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			function fun1() {
+				console.log($("#d1").text()); // innerText
+				console.log($("#d1").html()); // innerHtml
+				console.log($("#i1").val()); // value
+			}
+
+			function fun2() {
+				// $("#d1").text("<h1>牛气冲天！<h1>");
+				$("#d1").html("<h1>牛气冲天！</h1>");
+				$("#i1").val("你好");
+			}
+
+			function fun3() {
+				// $("#d1").html("");
+				$("#d1").empty();
+				$("#i1").val("");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" value="这里是文字" id="i1" />
+		<div id="d1">
+			a
+			<span>xxx</span>
+			b
+		</div>
+		<input type="button" value="获得标签内容" onclick="fun1()" />
+		<div id="d2" class="a"></div>
+		<input type="button" value="修改标签内容" onclick="fun2()" />
+		<input type="button" value="删除标签中的内容" onclick="fun3()" />
+	</body>
+</html>

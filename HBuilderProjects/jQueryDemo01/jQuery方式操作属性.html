@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#d1 {
+				width: 100%;
+				height: 300px;
+				border: 1px solid red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			function fun1() {
+				// 创建元素
+				var span1 = $("<span>测试文字</span>");
+				// 设置样式
+				span1.css("color", "lightpink");
+				span1.css("border", "1px solid blue");
+				span1.css("background-color", "lightblue");
+				// 设置文字
+				span1.text("今天天气很好！");
+
+				$("#d1").append(span1);
+			}
+
+			function fun2() {
+				var h = $("<h3>测试一下</h3>").css("color", "red").css("border", "1px solid green");
+				// $("#d1").append(h);
+				h.appendTo($("#d1"));
+			}
+
+			function fun3() {
+				var span3 = $('<span style="color: red; border: 1px solid orange;">测试一下</span>');
+				$("#d1").before(span3);
+			}
+
+			function fun4() {
+				var span4 = $('<span style="color: red; border: 1px solid orange;">测试一下</span>');
+				span4.insertBefore($("#d1"));
+			}
+
+			function fun5() {
+				var span5 = $('<span style="color: red; border: 1px solid orange;">测试一下</span>');
+				$("#d1").after(span5);
+			}
+
+			function fun6() {
+				var span6 = $('<span style="color: red; border: 1px solid orange;">测试一下</span>');
+				span6.insertAfter($("#d1"));
+			}
+
+			function fun7() {
+				$("#d1").empty();
+			}
+
+			function fun8() {
+				$("#d1").remove();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+
+		</div>
+		<input type="button" value="testAppend" onclick="fun1()" />
+		<input type="button" value="testAppendTo" onclick="fun2()" />
+		<input type="button" value="testBefore" onclick="fun3()" />
+		<input type="button" value="testInsertBefore" onclick="fun4()" />
+		<input type="button" value="testAfter" onclick="fun5()" />
+		<input type="button" value="testInsertAfter" onclick="fun6()" />
+		<input type="button" value="empty" onclick="fun7()" />
+		<input type="button" value="remove" onclick="fun8()" />
+	</body>
+</html>

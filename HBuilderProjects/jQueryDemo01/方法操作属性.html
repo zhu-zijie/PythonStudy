@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				background-color: aqua;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			function fun1() {
+				var colorValue = $("#f1").attr("color");
+				console.log(colorValue);
+				console.log($("#f1").attr("size"));
+				console.log($("#f1").attr("id"));
+				console.log($("#f1").text());
+			}
+
+			function fun2() {
+				$("#f1").attr("color", "green");
+				$("#f1").attr("size", "3");
+			}
+
+			function fun3() {
+				$("#f1").removeAttr("color");
+			}
+
+			function fun4() {
+				$("#f1").attr("class", "a");
+			}
+		</script>
+	</head>
+	<body>
+		<font id="f1" color='red' size='7'>牛气冲天！</font>
+		<hr />
+		<input type="button" value="获得属性" onclick="fun1()" />
+		<input type="button" value="修改属性" onclick="fun2()" />
+		<input type="button" value="删除属性" onclick="fun3()" />
+		<input type="button" value="添加属性" onclick="fun4()" />
+
+	</body>
+</html>

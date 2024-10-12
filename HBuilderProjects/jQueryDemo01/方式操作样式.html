@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+			}
+
+			.b {
+				border: 5px solid pink;
+				border-radius: 20px;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+
+		<script>
+			function fun1() {
+				// 获取d1的css样式
+				console.log($("#d1").css("width"));
+				console.log($("#d1").css("height"));
+				console.log($("#d1").css("background-color"));
+				// 修改d1的css样式
+				$("#d1").css("width", "200px");
+				$("#d1").css("height", "200px");
+				$("#d1").css("background-color", "yellow");
+			}
+
+
+			function fun2() {
+				$("#d2").addClass("b");
+			}
+
+			function fun3() {
+				$("#d2").removeClass("b");
+			}
+
+			function fun4() {
+				$("#d2").toggleClass("b");	// 如果有b则删除，没有b则添加
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1" class="a"></div>
+		<input type="button" value="修改样式" onclick="fun1()" />
+		<div id="d2" class="a"></div>
+		<input type="button" value="添加class值" onclick="fun2()" />
+		<input type="button" value="删除class值" onclick="fun3()" />
+		<input type="button" value="切换class值" onclick="fun4()" />
+	</body>
+</html>
