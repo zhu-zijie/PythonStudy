@@ -93,18 +93,18 @@ print(n18.max(axis=1))
 # 加权平均
 n19 = np.array([1, 2, 3, 4, 5])
 n20 = np.array([10, 20, 30, 40, 50])
-print(np.average(n19, weights=n20))
+print("加权平均：", np.average(n19, weights=n20))
 
 # 中位数
 n21 = np.array([1, 2, 3, 4, 5, 6])
-print(np.median(n21))
+print("中位数：", np.median(n21))
 
 # 方差
 n22 = np.array([1, 2, 3])
-print(n22.var())
+print("方差：", n22.var())
 
 # 标准差
-print(n22.std())
+print("标准差：", n22.std())
 
 # 数组的排序
 n23 = np.array([[4, 2, 7], [6, 7, 1], [8, 4, 7]])
