@@ -1,13 +1,9 @@
 import json
-
 import requests
-import random
-import string
+import base64
 from Cryptodome.Cipher import AES
 from Cryptodome.Util.Padding import pad
-import base64
-from Cryptodome.PublicKey import RSA
-from Cryptodome.Cipher import PKCS1_OAEP
+
 
 '''
 加密代码
@@ -69,12 +65,20 @@ bse8W(["爱心", "女孩", "惊恐", "大笑"]) = '0CoJUm6Qyw8W8jud'
 JSON.stringify(i6c) = '{"rid":"R_SO_4_2638631898","threadId":"R_SO_4_2638631898","pageNo":"1","pageSize":"20","cursor":"-1","offset":"0","orderType":"1","csrf_token":""}'
 
 
-
-
 '''
-url = 'https://music.163.com/weapi/comment/resource/comments/get?csrf_token='
+url = 'https://music.163.com/weapi/comment/resource/comments/get'
 
-first = '{"rid":"R_SO_4_2638631898","threadId":"R_SO_4_2638631898","pageNo":"1","pageSize":"20","cursor":"-1","offset":"0","orderType":"1","csrf_token":""}'
+data = {
+    "rid": "R_SO_4_2638631898",
+    "threadId": "R_SO_4_2638631898",
+    "pageNo": "1",
+    "pageSize": "20",
+    "cursor": "-1",
+    "offset": "0",
+    "orderType": "1",
+    "csrf_token": ""
+}
+first = json.dumps(data)
 second = '010001'
 third = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'
 fourth = '0CoJUm6Qyw8W8jud'
@@ -86,69 +90,46 @@ headers = {
 }
 
 
-def a(a):
-    b = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    c = ""
-    for d in range(a):
-        e = int(random.random() * len(b))
-        c += b[e]
-    return c
-
-
-def b(a, b):
-    c = b.encode('utf-8')
-    d = b'0102030405060708'
-    e = a.encode('utf-8')
-    cipher = AES.new(c, AES.MODE_CBC, d)
-    encrypted = cipher.encrypt(pad(e, AES.block_size))
+def aes_encrypt(text, key):
+    """AES CBC mode encryption"""
+    # Convert to bytes
+    text = text.encode('utf-8')
+    key = key.encode('utf-8')
+    iv = b'0102030405060708'
+    # Create cipher and encrypt
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    encrypted = cipher.encrypt(pad(text, AES.block_size))
+    # Encode as base64
     return base64.b64encode(encrypted).decode('utf-8')
-
-
-def c(a, b, c):
-    rsa_key = RSA.construct((int(c, 16), int(b, 16)))
-    cipher = PKCS1_OAEP.new(rsa_key)
-    encrypted = cipher.encrypt(a.encode('utf-8'))
-    return base64.b64encode(encrypted).decode('utf-8')
-
-
-def d(d, e, f, g):
-    h = {}
-    # i = a(16)
-    i = 'uMdVtJ5vSxRlCM2H'
-    h['encText'] = b(d, g)
-    h['encText'] = b(h['encText'], i)
-    h['encSecKey'] = c(i, e, f)
-    return h
-
-
-def e(a, b, d, e):
-    f = {}
-    f['encText'] = c(a + e, b, d)
-    return f
 
 
 def get_encSecKey():
-    encSecKey = d(first, second, third, fourth)['encSecKey']
+    # 固定i得到的encSecKey
+    encSecKey = 'ab77b55c56b84e2e6a6bf1142b337d64205a51b4149806f9e7e340f09ac366cf339303ed095a0db9a6434a030fa7d87defcad67c6d8781c85a0bd74a8bb943c353bb60bd5ba33f7c4cf314bd6624e9089aabd500b98e016f259b4fca0aabf4860464b3afc0d4f5c54f9835a256d15811116ff03d8feb70ac604a19e77d6008a6'
     return encSecKey
 
 
 def get_params():
-    params = d(first, second, third, fourth)['encText']
-    return params
+    # 固定i的值
+    i = '5r7Fojvz1584CFQ0'
+    encText = aes_encrypt(first, fourth)
+    encText = aes_encrypt(encText, i)
+    return encText
 
 
 if __name__ == '__main__':
-    # 获取encSecKey
     encSecKey = get_encSecKey()
-    # 获取params
     params = get_params()
+    # data = {
+    #     'params': params,
+    #     'encSecKey': encSecKey
+    # }
 
     data = {
-        'params': params,
-        'encSecKey': encSecKey
-    }
+        'encText': 'xdZAqF6URk/uUmhujRXf7YPk1HaQ06vaM+V+atwWPKavgtvfOK51ImbhqrobkQ2L6DByISD8naoPJsijSHR0AFgqdwDb3FLhbAEKbwAzCq8LFLWy8pRTEfeSeERU8nIkOJp0dmB+3hbWrVfZ+D+bkrP3aWgJB8WKmRZF31Q3yPGyVW8PXiB6uD2vYANHH6In1KaqcEXZIpaJtb6Yk4mQitEJrKBKCoAM2bg7gyqt0jMgzK/K+elNK/wXixzYJdYRcGjkFMQy3eegTqzWycrmr7Uvp55yiqFawaRrZ2AfymU=',
+        'encSecKey': 'cd1f04538a66a1f9742ae21220ff6a1649194101b5885f966942235577f20f7c60c309980b1d6df0834f684f7ddf04da94c70a952d4a279074a0806e44ceb68e7a1e8617e74906bccbd31fba181f8ae836b6e99790610bacfab0b385bb649bb2e0fb762ef76b6f199d1aa26ddbf10fe007f04dc6baecc8cad1ab92aaa934c651'
+}
 
-    resp = requests.post(url, headers=headers)
+    resp = requests.post(url, headers=headers, data=data)
 
-    print(data)
     print(resp.text)

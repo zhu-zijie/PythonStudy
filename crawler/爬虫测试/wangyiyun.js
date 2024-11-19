@@ -118,26 +118,26 @@ var CryptoJS = CryptoJS || function(u, p) {
     }
       , q = l.BufferedBlockAlgorithm = t.extend({
         reset: function() {
-            this.i2x = new r.init;
-            this.zc0x = 0
+            this.i1x = new r.init;
+            this.yi6c = 0
         },
-        zY1x: function(a) {
+        zz6t: function(a) {
             "string" == typeof a && (a = x.parse(a));
-            this.i2x.concat(a);
-            this.zc0x += a.sigBytes
+            this.i1x.concat(a);
+            this.yi6c += a.sigBytes
         },
-        mK6E: function(a) {
-            var c = this.i2x
+        nc4g: function(a) {
+            var c = this.i1x
               , e = c.words
               , j = c.sigBytes
               , k = this.blockSize
               , b = j / (4 * k)
-              , b = a ? u.ceil(b) : u.max((b | 0) - this.Rj7c, 0);
+              , b = a ? u.ceil(b) : u.max((b | 0) - this.RV1x, 0);
             a = b * k;
             j = u.min(4 * a, j);
             if (a) {
                 for (var q = 0; q < a; q += k)
-                    this.sC8u(e, q);
+                    this.tj5o(e, q);
                 q = e.splice(0, a);
                 c.sigBytes -= j
             }
@@ -145,10 +145,10 @@ var CryptoJS = CryptoJS || function(u, p) {
         },
         clone: function() {
             var a = t.clone.call(this);
-            a.i2x = this.i2x.clone();
+            a.i1x = this.i1x.clone();
             return a
         },
-        Rj7c: 0
+        RV1x: 0
     });
     l.Hasher = q.extend({
         cfg: t.extend(),
@@ -158,24 +158,24 @@ var CryptoJS = CryptoJS || function(u, p) {
         },
         reset: function() {
             q.reset.call(this);
-            this.mx6r()
+            this.mk4o()
         },
         update: function(a) {
-            this.zY1x(a);
-            this.mK6E();
+            this.zz6t(a);
+            this.nc4g();
             return this
         },
         finalize: function(a) {
-            a && this.zY1x(a);
-            return this.nW7P()
+            a && this.zz6t(a);
+            return this.nT4X()
         },
         blockSize: 16,
-        mQ6K: function(a) {
+        mZ4d: function(a) {
             return function(b, e) {
                 return (new a.init(e)).finalize(b)
             }
         },
-        za0x: function(a) {
+        ym6g: function(a) {
             return function(b, e) {
                 return (new n.HMAC.init(a,e)).finalize(b)
             }
@@ -191,7 +191,7 @@ var CryptoJS = CryptoJS || function(u, p) {
         stringify: function(d) {
             var l = d.words
               , p = d.sigBytes
-              , t = this.bD3x;
+              , t = this.bD2x;
             d.clamp();
             d = [];
             for (var r = 0; r < p; r += 3)
@@ -204,7 +204,7 @@ var CryptoJS = CryptoJS || function(u, p) {
         },
         parse: function(d) {
             var l = d.length
-              , s = this.bD3x
+              , s = this.bD2x
               , t = s.charAt(64);
             t && (t = d.indexOf(t),
             -1 != t && (l = t));
@@ -217,7 +217,7 @@ var CryptoJS = CryptoJS || function(u, p) {
                 }
             return p.create(t, r)
         },
-        bD3x: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+        bD2x: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
     }
 }
 )();
@@ -241,16 +241,16 @@ var CryptoJS = CryptoJS || function(u, p) {
     for (var t = CryptoJS, r = t.lib, w = r.WordArray, v = r.Hasher, r = t.algo, b = [], x = 0; 64 > x; x++)
         b[x] = 4294967296 * u.abs(u.sin(x + 1)) | 0;
     r = r.MD5 = v.extend({
-        mx6r: function() {
-            this.cU3x = new w.init([1732584193, 4023233417, 2562383102, 271733878])
+        mk4o: function() {
+            this.cT2x = new w.init([1732584193, 4023233417, 2562383102, 271733878])
         },
-        sC8u: function(q, n) {
+        tj5o: function(q, n) {
             for (var a = 0; 16 > a; a++) {
                 var c = n + a
                   , e = q[c];
                 q[c] = (e << 8 | e >>> 24) & 16711935 | (e << 24 | e >>> 8) & 4278255360
             }
-            var a = this.cU3x.words
+            var a = this.cT2x.words
               , c = q[n + 0]
               , e = q[n + 1]
               , j = q[n + 2]
@@ -340,18 +340,18 @@ var CryptoJS = CryptoJS || function(u, p) {
             a[2] = a[2] + g | 0;
             a[3] = a[3] + h | 0
         },
-        nW7P: function() {
-            var b = this.i2x
+        nT4X: function() {
+            var b = this.i1x
               , n = b.words
-              , a = 8 * this.zc0x
+              , a = 8 * this.yi6c
               , c = 8 * b.sigBytes;
             n[c >>> 5] |= 128 << 24 - c % 32;
             var e = u.floor(a / 4294967296);
             n[(c + 64 >>> 9 << 4) + 15] = (e << 8 | e >>> 24) & 16711935 | (e << 24 | e >>> 8) & 4278255360;
             n[(c + 64 >>> 9 << 4) + 14] = (a << 8 | a >>> 24) & 16711935 | (a << 24 | a >>> 8) & 4278255360;
             b.sigBytes = 4 * (n.length + 1);
-            this.mK6E();
-            b = this.cU3x;
+            this.nc4g();
+            b = this.cT2x;
             n = b.words;
             for (a = 0; 4 > a; a++)
                 c = n[a],
@@ -360,12 +360,12 @@ var CryptoJS = CryptoJS || function(u, p) {
         },
         clone: function() {
             var b = v.clone.call(this);
-            b.cU3x = this.cU3x.clone();
+            b.cT2x = this.cT2x.clone();
             return b
         }
     });
-    t.MD5 = v.mQ6K(r);
-    t.HmacMD5 = v.za0x(r)
+    t.MD5 = v.mZ4d(r);
+    t.HmacMD5 = v.ym6g(r)
 }
 )(Math);
 (function() {
@@ -413,34 +413,34 @@ CryptoJS.lib.Cipher || function(u) {
       , v = d.Cipher = t.extend({
         cfg: l.extend(),
         createEncryptor: function(e, a) {
-            return this.create(this.GB2x, e, a)
+            return this.create(this.Hb0x, e, a)
         },
         createDecryptor: function(e, a) {
-            return this.create(this.bvc3x, e, a)
+            return this.create(this.brq1x, e, a)
         },
         init: function(e, a, b) {
             this.cfg = this.cfg.extend(b);
-            this.Ri7b = e;
-            this.J2x = a;
+            this.RU1x = e;
+            this.J1x = a;
             this.reset()
         },
         reset: function() {
             t.reset.call(this);
-            this.mx6r()
+            this.mk4o()
         },
         process: function(e) {
-            this.zY1x(e);
-            return this.mK6E()
+            this.zz6t(e);
+            return this.nc4g()
         },
         finalize: function(e) {
-            e && this.zY1x(e);
-            return this.nW7P()
+            e && this.zz6t(e);
+            return this.nT4X()
         },
         keySize: 4,
         ivSize: 4,
-        GB2x: 1,
-        bvc3x: 2,
-        mQ6K: function(e) {
+        Hb0x: 1,
+        brq1x: 2,
+        mZ4d: function(e) {
             return {
                 encrypt: function(b, k, d) {
                     return ("string" == typeof k ? c : a).encrypt(e, b, k, d)
@@ -452,15 +452,15 @@ CryptoJS.lib.Cipher || function(u) {
         }
     });
     d.StreamCipher = v.extend({
-        nW7P: function() {
-            return this.mK6E(!0)
+        nT4X: function() {
+            return this.nc4g(!0)
         },
         blockSize: 1
     });
     var b = p.mode = {}
       , x = function(e, a, b) {
-        var c = this.sF8x;
-        c ? this.sF8x = u : c = this.Fo2x;
+        var c = this.tG5L;
+        c ? this.tG5L = u : c = this.EC7v;
         for (var d = 0; d < b; d++)
             e[a + d] ^= c[d]
     }
@@ -472,27 +472,27 @@ CryptoJS.lib.Cipher || function(u) {
             return this.Decryptor.create(e, a)
         },
         init: function(e, a) {
-            this.uA9r = e;
-            this.sF8x = a
+            this.vD6x = e;
+            this.tG5L = a
         }
     })).extend();
     q.Encryptor = q.extend({
         processBlock: function(e, a) {
-            var b = this.uA9r
+            var b = this.vD6x
               , c = b.blockSize;
             x.call(this, e, a, c);
             b.encryptBlock(e, a);
-            this.Fo2x = e.slice(a, a + c)
+            this.EC7v = e.slice(a, a + c)
         }
     });
     q.Decryptor = q.extend({
         processBlock: function(e, a) {
-            var b = this.uA9r
+            var b = this.vD6x
               , c = b.blockSize
               , d = e.slice(a, a + c);
             b.decryptBlock(e, a);
             x.call(this, e, a, c);
-            this.Fo2x = d
+            this.EC7v = d
         }
     });
     b = b.CBC = q;
@@ -517,23 +517,23 @@ CryptoJS.lib.Cipher || function(u) {
             var a = this.cfg
               , b = a.iv
               , a = a.mode;
-            if (this.Ri7b == this.GB2x)
+            if (this.RU1x == this.Hb0x)
                 var c = a.createEncryptor;
             else
                 c = a.createDecryptor,
-                this.Rj7c = 1;
-            this.eT4X = c.call(a, this, b && b.words)
+                this.RV1x = 1;
+            this.eR2x = c.call(a, this, b && b.words)
         },
-        sC8u: function(a, b) {
-            this.eT4X.processBlock(a, b)
+        tj5o: function(a, b) {
+            this.eR2x.processBlock(a, b)
         },
-        nW7P: function() {
+        nT4X: function() {
             var a = this.cfg.padding;
-            if (this.Ri7b == this.GB2x) {
-                a.pad(this.i2x, this.blockSize);
-                var b = this.mK6E(!0)
+            if (this.RU1x == this.Hb0x) {
+                a.pad(this.i1x, this.blockSize);
+                var b = this.nc4g(!0)
             } else
-                b = this.mK6E(!0),
+                b = this.nc4g(!0),
                 a.unpad(b);
             return b
         },
@@ -589,10 +589,10 @@ CryptoJS.lib.Cipher || function(u) {
         },
         decrypt: function(a, b, c, d) {
             d = this.cfg.extend(d);
-            b = this.JV6P(b, d.format);
+            b = this.IC0x(b, d.format);
             return a.createDecryptor(c, d).finalize(b.ciphertext)
         },
-        JV6P: function(a, b) {
+        IC0x: function(a, b) {
             return "string" == typeof a ? b.parse(a, this) : a
         }
     })
@@ -625,7 +625,7 @@ CryptoJS.lib.Cipher || function(u) {
         },
         decrypt: function(b, c, d, l) {
             l = this.cfg.extend(l);
-            c = this.JV6P(c, l.format);
+            c = this.IC0x(c, l.format);
             d = l.kdf.execute(d, b.keySize, b.ivSize, c.salt);
             l.iv = d.iv;
             return a.decrypt.call(this, b, c, d.key, l)
@@ -658,8 +658,8 @@ CryptoJS.lib.Cipher || function(u) {
     }
     var H = [0, 1, 2, 4, 8, 16, 32, 64, 128, 27, 54]
       , d = d.AES = p.extend({
-        mx6r: function() {
-            for (var a = this.J2x, c = a.words, d = a.sigBytes / 4, a = 4 * ((this.bil1x = d + 6) + 1), e = this.bva3x = [], j = 0; j < a; j++)
+        mk4o: function() {
+            for (var a = this.J1x, c = a.words, d = a.sigBytes / 4, a = 4 * ((this.bfO9F = d + 6) + 1), e = this.brR1x = [], j = 0; j < a; j++)
                 if (j < d)
                     e[j] = c[j];
                 else {
@@ -669,26 +669,26 @@ CryptoJS.lib.Cipher || function(u) {
                     k ^= H[j / d | 0] << 24);
                     e[j] = e[j - d] ^ k
                 }
-            c = this.buW3x = [];
+            c = this.bsb1x = [];
             for (d = 0; d < a; d++)
                 j = a - d,
                 k = d % 4 ? e[j] : e[j - 4],
                 c[d] = 4 > d || 4 >= j ? k : b[l[k >>> 24]] ^ x[l[k >>> 16 & 255]] ^ q[l[k >>> 8 & 255]] ^ n[l[k & 255]]
         },
         encryptBlock: function(a, b) {
-            this.Fn2x(a, b, this.bva3x, t, r, w, v, l)
+            this.ED7w(a, b, this.brR1x, t, r, w, v, l)
         },
         decryptBlock: function(a, c) {
             var d = a[c + 1];
             a[c + 1] = a[c + 3];
             a[c + 3] = d;
-            this.Fn2x(a, c, this.buW3x, b, x, q, n, s);
+            this.ED7w(a, c, this.bsb1x, b, x, q, n, s);
             d = a[c + 1];
             a[c + 1] = a[c + 3];
             a[c + 3] = d
         },
-        Fn2x: function(a, b, c, d, e, j, l, f) {
-            for (var m = this.bil1x, g = a[b] ^ c[0], h = a[b + 1] ^ c[1], k = a[b + 2] ^ c[2], n = a[b + 3] ^ c[3], p = 4, r = 1; r < m; r++)
+        ED7w: function(a, b, c, d, e, j, l, f) {
+            for (var m = this.bfO9F, g = a[b] ^ c[0], h = a[b + 1] ^ c[1], k = a[b + 2] ^ c[2], n = a[b + 3] ^ c[3], p = 4, r = 1; r < m; r++)
                 var q = d[g >>> 24] ^ e[h >>> 16 & 255] ^ j[k >>> 8 & 255] ^ l[n & 255] ^ c[p++]
                   , s = d[h >>> 24] ^ e[k >>> 16 & 255] ^ j[n >>> 8 & 255] ^ l[g & 255] ^ c[p++]
                   , t = d[k >>> 24] ^ e[n >>> 16 & 255] ^ j[g >>> 8 & 255] ^ l[h & 255] ^ c[p++]
@@ -707,7 +707,7 @@ CryptoJS.lib.Cipher || function(u) {
         },
         keySize: 8
     });
-    u.AES = p.mQ6K(d)
+    u.AES = p.mZ4d(d)
 }
 )();
 function RSAKeyPair(a, b, c) {
@@ -1133,7 +1133,6 @@ hexatrigesimalToChar = new Array("0","1","2","3","4","5","6","7","8","9","a","b"
 hexToChar = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"),
 highBitMasks = new Array(0,32768,49152,57344,61440,63488,64512,65024,65280,65408,65472,65504,65520,65528,65532,65534,65535),
 lowBitMasks = new Array(0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535);
-
 !function() {
     function a(a) {
         var d, e, b = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", c = "";
@@ -1176,12 +1175,23 @@ lowBitMasks = new Array(0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,3
     ecnonasr = e
 }();
 
-function start(id) {
-    var d= {"ids":"["+id+"]","level":"standard","encodeType":"aac","csrf_token":"ec623bb8af85bb072a2f4bb86ec0f8cd"}
-    var e= "010001"
-    var f= "00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7"
-    var g= "0CoJUm6Qyw8W8jud"
-    var bKB4F = asrsea(JSON.stringify(d), e, f, g)
-    return bKB4F
+function processData(id){
+    data = {
+        "rid": `R_SO_4_${id}`,
+        "threadId": `R_SO_4_${id}`,
+        "pageNo": "1",
+        "pageSize": "20",
+        "cursor": "-1",
+        "offset": "0",
+        "orderType": "1",
+        "csrf_token": ""
+    };
+    first = data;
+    second = '010001'
+    third = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7';
+    fourth = '0CoJUm6Qyw8W8jud';
+    return asrsea(JSON.stringify(first), second, third, fourth);
 }
-console.log(start(1325905146))
+
+console.log(processData(2638631898));
+
