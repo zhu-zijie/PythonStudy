@@ -4,7 +4,7 @@ import base64
 from Cryptodome.Cipher import AES
 from Cryptodome.Util.Padding import pad
 
-
+# 代码逻辑
 '''
 加密代码
 function() {
@@ -50,10 +50,10 @@ function() {
 }();
 
 '''
-
+# 分析
 '''
 分析：
-params和encSecKey是两个参数，需要通过get_params和get_encSecKey方法获取
+评论：params和encSecKey是两个参数，需要通过get_params和get_encSecKey方法获取
 var bVj1x = window.asrsea(JSON.stringify(i6c), bse8W(["流泪", "强"]), bse8W(RR7K.md), bse8W(["爱心", "女孩", "惊恐", "大笑"]));
     params: bVj1x.encText,
     encSecKey: bVj1x.encSecKey
@@ -64,28 +64,32 @@ bse8W(RR7K.md) = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b7
 bse8W(["爱心", "女孩", "惊恐", "大笑"]) = '0CoJUm6Qyw8W8jud'
 JSON.stringify(i6c) = '{"rid":"R_SO_4_2638631898","threadId":"R_SO_4_2638631898","pageNo":"1","pageSize":"20","cursor":"-1","offset":"0","orderType":"1","csrf_token":""}'
 
+歌曲搜索：
+csrf_token: 5d2041a48d11e68f70e0c675c7286a39
+
+https://music.163.com/weapi/cloudsearch/get/web?csrf_token=5d2041a48d11e68f70e0c675c7286a39
+var bVj3x = window.asrsea(JSON.stringify(i1x), bse1x(["流泪", "强"]), bse1x(RR1x.md), bse1x(["爱心", "女孩", "惊恐", "大笑"]));
+e1x.data = j1x.cr2x({
+        params: bVj3x.encText,
+        encSecKey: bVj3x.encSecKey
+            })
+            
+歌曲信息：
+https://music.163.com/weapi/song/enhance/player/url/v1?csrf_token=da1db1553a7e3c98b6ef016e39c89d32
+
+歌词：
+https://music.163.com/weapi/song/lyric?csrf_token=da1db1553a7e3c98b6ef016e39c89d32
+            
 
 '''
-url = 'https://music.163.com/weapi/comment/resource/comments/get'
 
-data = {
-    "rid": "R_SO_4_2638631898",
-    "threadId": "R_SO_4_2638631898",
-    "pageNo": "1",
-    "pageSize": "20",
-    "cursor": "-1",
-    "offset": "0",
-    "orderType": "1",
-    "csrf_token": ""
-}
-first = json.dumps(data)
 second = '010001'
 third = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'
 fourth = '0CoJUm6Qyw8W8jud'
 
 headers = {
-    'cookie': 'NMTID=00OTlmM7WjvWABVNETAsBcsWXtWtOwAAAGTP5y3uQ; JSESSIONID-WYYY=WE5bZZPZeC%5Ctum6ABVFYPMNv%2FpHI0%2Bb6SyBmMCvu8bA1fR2AJaEY%5CCahXO273wBz5O5HZWTZJ8%5CZNJsQMgb%2FxlyB%2FoAVOeWWsWcUCXB9u%2FcZWcEipVN3nR8%2FnCUVQExHQrDeb%5CRvdwspCkgTlK8ozMW%5CgMsME20QCJ2wVNXOjRq%5CmwcB%3A1731940855961; _iuqxldmzr_=32; _ntes_nnid=4e58a15dbc3498ba3ade6ad5a351af88,1731939055981; _ntes_nuid=4e58a15dbc3498ba3ade6ad5a351af88; WEVNSM=1.0.0; WNMCID=qqfphp.1731939056826.01.0; WM_NI=8Cs7p6jY6QfrWfs3d%2BwAH5eP0heJuDuEUOS2la%2FeFqfDGkSSjCy1THsbcw3V4g4qyTMJqHgsTr3yL%2BBnYa1R7j9ZHzGROFKiQBnoEJmjTtJNIW7J0xqwaARn9lBuX9RlMnk%3D; WM_NIKE=9ca17ae2e6ffcda170e2e6eeccce6f89eaa5abc74092a88fa3d84a938a9b83db54f4aee198b644ae95fe88b72af0fea7c3b92afc9dbdd8f33eaa87fab2e57a95babdd4e721b59f88d6e85cf4b8ababf850b79b9bb0d23ab0bfe186c57ba69c898cd259aa9db7d2d744b1bead98b25ef8b9fc92fc608f96bfa9e67998aefd9acf2182b29782b45af5b6f7bbcb72858e81a7ca63939ea290c842afb69c95c9468b89f9abb374b3a9afa2d166fbb48e96db3392b4838fea37e2a3; WM_TID=xx%2B0BkKMJGpEUUFBFAOSDg6%2Fk%2FSmLzkp; __snaker__id=gX6pszJu4bCZinGf; gdxidpyhxdE=0scPa5q37zgWGjDAnHwH%5C0SoWsDqWHDkvjh0YoL4BnfV%2FMT9YohhjOf3L9uPi3eBPC1sTA4WT5LMARl3CaoIYJ%2FfxyYJQ8XOdZMwQ2vRq917bB%5CXm0gI03eRMB15hKbSubzMh%5Ch5Opl%5CNN5wvqj5Pga18hDDNiB6e63JzPIJhq9q7Sv7%3A1731939975489',
-    'referer': 'https://music.163.com/song?id=2638631898',
+    'cookie': 'NMTID=00OTlmM7WjvWABVNETAsBcsWXtWtOwAAAGTP5y3uQ; _iuqxldmzr_=32; _ntes_nnid=4e58a15dbc3498ba3ade6ad5a351af88,1731939055981; _ntes_nuid=4e58a15dbc3498ba3ade6ad5a351af88; WEVNSM=1.0.0; WNMCID=qqfphp.1731939056826.01.0; WM_TID=xx%2B0BkKMJGpEUUFBFAOSDg6%2Fk%2FSmLzkp; __snaker__id=gX6pszJu4bCZinGf; WM_NI=8VCJh5Q0ntfYBN15vjHy4TzZu7PsqJ8shMZo3mbDBj4yr7UCYb8IboqDSHvRerT3%2BqDv9Efd%2Fo4M0hwD7pkSMv3%2FB3E9SlmvM%2BVuVe8LxGtum%2BhnbE7eQbkozVH4FAtFMnI%3D; WM_NIKE=9ca17ae2e6ffcda170e2e6eeaeb5398aaa89a2b179b4b88fb7c54e938f8e86c760ab9dadb9b864878aad8ec12af0fea7c3b92afc8a8dabeb3f93f0a295e5538292ffd6f5628ca7fcb5f952b7e9a094f442fcada8aed965f1b3aea5c162f8a7bed8d8499bbef8aae165b39c9da9f55aa7ae9cd4aa7b88aaf7a6e570edb1fcaeb364b59cf991ea598faafdd0c13987e79d8df07e8ff59a96d56ffc94b8a8f77faff5a88fe14ff5bb9f83ea65ba8a88d5c54bb89a838fcc37e2a3; gdxidpyhxdE=VSVQYK%5CWspkTeyrorKhgc0ORDKqZWB6RiqCdtpSjM0W8E6rLoaJ8a7oylwa%5CY5eTdShPHx3%5CE64Ij1R430LjEYR1iYa5tupQbAO%2BD%5Cp4%2BarCYtIIeLEYSktei7LnhlhZCzrIDSmHuHJQejaljRdg%5CTDX41WttgpqgZMOJyXnXpy6zflG%3A1732183160987; MUSIC_U=0069D42FC33EAD921DFC0A1686473FBFF135EF88B0884952FAFDFED0475851B08CED83FF92359E23DFC7FA3FB3E9334A45A0D0A1DAEAB43E66AD79B508B4948BE003BE4F84545CB545E9776D1A4307930987AE4397C96B1CF578FB4C9052273B33748B7850AAB472ED91E3105EFF3E3A1C9BB47271E3013082F1C4DEE3DE3F69BC3C2BF80334BD65CE7F3ECFC309B7F888D6BFD9CC91881629A652F35C316A2D6C372F50DDBD7FCB8EF7E7B043DDA598CB0E66DEE77E0592D6F1B84288AA3696B4222D4FC5DBF44286FBC3F92ABDE239A7E23316E49B4826700A47BFC72285EECC15955D479A498783E6F1386DDA0295DE13573EA24759FECDA215641257E1C20F6AC00CF4D76740A932727224FFC33E17A4BBB918DBC928F87BBCB804C9081AD91A963A37C2A91BEE991F12A5196DF12C; __csrf=da1db1553a7e3c98b6ef016e39c89d32; JSESSIONID-WYYY=T9pH%2B0KvkyjZcuq7AJDcaZu3cXYZ1XYXMymxmoWrkAuQvsW0%5CyozWE0cNZvmVDTB26p4mOjD9NcjmaDkS3SqPAGUln%2BiYqoop5HVwEKkl5%2FwErzRmrYHl4SaSs5QighDIFxi5PD%2BZVZv1%2BGtrIJNZy7N5%2BjRbG9IKU4stT%5CcqMBNSQtR%3A1732184150177',
+    'referer': 'https://music.163.com',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
 }
 
@@ -109,27 +113,141 @@ def get_encSecKey():
     return encSecKey
 
 
-def get_params():
+def get_params(data):
     # 固定i的值
     i = '5r7Fojvz1584CFQ0'
-    encText = aes_encrypt(first, fourth)
+    encText = aes_encrypt(data, fourth)
     encText = aes_encrypt(encText, i)
     return encText
 
 
-if __name__ == '__main__':
+def getData(commentData):
+    first = json.dumps(commentData)
     encSecKey = get_encSecKey()
-    params = get_params()
-    # data = {
-    #     'params': params,
-    #     'encSecKey': encSecKey
-    # }
-
+    params = get_params(first)
     data = {
-        'encText': 'xdZAqF6URk/uUmhujRXf7YPk1HaQ06vaM+V+atwWPKavgtvfOK51ImbhqrobkQ2L6DByISD8naoPJsijSHR0AFgqdwDb3FLhbAEKbwAzCq8LFLWy8pRTEfeSeERU8nIkOJp0dmB+3hbWrVfZ+D+bkrP3aWgJB8WKmRZF31Q3yPGyVW8PXiB6uD2vYANHH6In1KaqcEXZIpaJtb6Yk4mQitEJrKBKCoAM2bg7gyqt0jMgzK/K+elNK/wXixzYJdYRcGjkFMQy3eegTqzWycrmr7Uvp55yiqFawaRrZ2AfymU=',
-        'encSecKey': 'cd1f04538a66a1f9742ae21220ff6a1649194101b5885f966942235577f20f7c60c309980b1d6df0834f684f7ddf04da94c70a952d4a279074a0806e44ceb68e7a1e8617e74906bccbd31fba181f8ae836b6e99790610bacfab0b385bb649bb2e0fb762ef76b6f199d1aa26ddbf10fe007f04dc6baecc8cad1ab92aaa934c651'
-}
+        'params': params,
+        'encSecKey': encSecKey
+    }
+    return data
 
-    resp = requests.post(url, headers=headers, data=data)
 
-    print(resp.text)
+# 下载歌曲
+def downloadMusic(songId, songName, singerName):
+    url = "https://music.163.com/weapi/song/enhance/player/url/v1"
+    songDetailData = {
+        "csrf_token": "da1db1553a7e3c98b6ef016e39c89d32",
+        "encodeType": "aac",
+        "ids": f"[{id}]",
+        "level": "standard"
+    }
+    data = getData(songDetailData)
+    try:
+        resp = requests.post(url, data=data, headers=headers)
+        downloadUrl = resp.json()['data'][0]['url']
+        with open(f'data/{singerName}-{songName}.mp3', mode='wb') as f:
+            f.write(requests.get(downloadUrl).content)
+        print("下载完成！")
+    except Exception as e:
+        print(e)
+
+
+# 获取歌曲列表
+def getMusicList(singer):
+    url = 'https://music.163.com/weapi/cloudsearch/get/web'
+    musicData = {
+        "csrf_token": "da1db1553a7e3c98b6ef016e39c89d32",
+        "hlposttag": "</span>",
+        "hlpretag": "<span class=\"s-fc7\">",
+        "limit": "30",
+        "offset": "0",
+        "s": f"{singer}",
+        "total": "true",
+        "type": "1"
+    }
+    data = getData(musicData)
+    resp = requests.post(url, data=data, headers=headers)
+    songs = resp.json()['result']['songs']
+    songList = []
+    for song in songs:
+        id = song['id']
+        name = song['name']
+        print(f"歌曲名：{name}，歌曲id：{id}")
+        songList.append(dict(name=name, id=id))
+    return songList
+
+
+# 热评
+def getComments(id):
+    url = 'https://music.163.com/weapi/comment/resource/comments/get'
+    commentData = {
+        "rid": f"R_SO_4_{id}",
+        "threadId": f"R_SO_4_{id}",
+        "pageNo": "1",
+        "pageSize": "20",
+        "cursor": "-1",
+        "offset": "0",
+        "orderType": "1",
+        "csrf_token": ""
+    }
+    data = getData(commentData)
+
+    resp = requests.post(url, data=data)
+    comments = resp.json()['data']['hotComments']
+    num = 1  # 初始化
+    for comment in comments:
+        print(f"********************************* 第{num}条热评！*********************************")
+        print(f"{comment['user']['nickname']}: {comment['content']}")  # 评论内容
+        print('\n')
+        num += 1
+
+
+# 下载歌词
+def getLyric(songId, songName, singerName):
+    url = 'https://music.163.com/weapi/song/lyric'
+    lyricData = {
+        "csrf_token": "da1db1553a7e3c98b6ef016e39c89d32",
+        "id": songId,
+        "lv": -1,
+        "tv": -1
+    }
+    data = getData(lyricData)
+    try:
+        resp = requests.post(url, data=data, headers=headers)
+        lyric = resp.json()['lrc']['lyric']
+        with open(f'data/{singerName}-{songName}.lrc', mode='w', encoding='utf-8') as f:
+            f.write(lyric)
+        print("歌词下载完成！")
+    except Exception as e:
+        print(e)
+
+
+if __name__ == '__main__':
+    singerName = input("请输入歌手的姓名：")
+    songList = getMusicList(singerName)
+    while True:
+        flag = True  # 标记是否找到歌曲
+        id = int(input("请输入歌曲id（0.结束任务！）："))
+        if id == 0:
+            break
+
+        for song in songList:
+            songName = song['name']
+            songId = song['id']
+            if songId == id:
+                while True:
+                    flag = False  # 标记找到歌曲
+                    choice = int(input("请输入您的选择（0.取消任务 1.下载歌曲 2.获取热评 3.下载歌词）："))
+                    if choice == 0:
+                        break
+                    elif choice == 1:
+                        downloadMusic(songId, songName, singerName)
+                    elif choice == 2:
+                        getComments(songId)
+                    elif choice == 3:
+                        getLyric(songId, songName, singerName)
+                    else:
+                        print("输入有误！")
+        if flag:
+            print("您输入的歌曲id有误！")
+    print("感谢您的使用！")
