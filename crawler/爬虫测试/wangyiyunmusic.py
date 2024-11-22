@@ -73,13 +73,13 @@ e1x.data = j1x.cr2x({
         params: bVj3x.encText,
         encSecKey: bVj3x.encSecKey
             })
-            
+
 歌曲信息：
 https://music.163.com/weapi/song/enhance/player/url/v1?csrf_token=da1db1553a7e3c98b6ef016e39c89d32
 
 歌词：
 https://music.163.com/weapi/song/lyric?csrf_token=da1db1553a7e3c98b6ef016e39c89d32
-            
+
 
 '''
 
