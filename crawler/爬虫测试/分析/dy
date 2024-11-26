@@ -1,0 +1,9 @@
+通过url可以得到播放地址
+url = 'https://www.douyin.com/aweme/v1/web/tab/feed/?device_platform=webapp&aid=6383&channel=channel_pc_web&tag_id=&share_aweme_id=&live_insert_type=&count=10&refresh_index=2&video_type_select=1&aweme_pc_rec_raw_data=%7B%22videoPrefer%22%3A%7B%22fsn%22%3A%5B%5D%2C%22like%22%3A%5B%5D%2C%22halfMin%22%3A%5B%227429571970855633444%22%2C%2261294237130%22%5D%2C%22min%22%3A%5B%5D%7D%2C%22seo_info%22%3A%22https%3A%2F%2Fwww.douyin.com%2F%22%2C%22is_client%22%3Afalse%2C%22ff_danmaku_status%22%3A1%2C%22danmaku_switch_status%22%3A1%2C%22is_dash_user%22%3A1%2C%22is_auto_play%22%3A0%2C%22is_full_screen%22%3A0%2C%22is_full_webscreen%22%3A0%2C%22is_mute%22%3A1%2C%22is_speed%22%3A1%2C%22is_visible%22%3A1%2C%22related_recommend%22%3A1%7D&globalwid=&pull_type=2&min_window=0&free_right=0&view_count=8&plug_block=0&ug_source=&creative_id=&pc_client_type=1&pc_libra_divert=Windows&version_code=170400&version_name=17.4.0&cookie_enabled=true&screen_width=1680&screen_height=1050&browser_language=zh-CN&browser_platform=Win32&browser_name=Chrome&browser_version=131.0.0.0&browser_online=true&engine_name=Blink&engine_version=131.0.0.0&os_name=Windows&os_version=10&cpu_core_num=16&device_memory=8&platform=PC&downlink=10&effective_type=4g&round_trip_time=150&webid=7405909213782197775&msToken=8FzvuhWv2oo8EmVmjaRDoDV8YAWsZaFlYSZYUAlllFrF1_5XFp8H0-1s9yoa2m_wByBKuEkvQKeGVlPg40co_WZKMyk0JKuLo51oyMQU_tnX31y-fd5osJvg7eVsvPAM7BYbkuHxSEw70TsoruFiqkXELhLsI3n6GQvNtwjPl1gC0TiZkE-Maw%3D%3D&a_bogus=mXsfgzSjEqQcadFbYObXCRcltlylNB8yv1ixSHpTyOOCb1McKYP8hNcbcxzojlbw%2FWBiioI7adF%2FYdVcMtUwZKnpumpDugzjmU%2F9V7XLhqi2PzJsEqmgezDzow0t8Qsol%2FcfN1URIs0j6dQlVNChAp-7z%2FXN-mRmMr-4V%2FutT9KmUW8jk92na5Spuhv8&verifyFp=verify_m2pxikzw_CLtBmoLO_otvm_45lE_9taR_VGsjgqEx23md&fp=verify_m2pxikzw_CLtBmoLO_otvm_45lE_9taR_VGsjgqEx23md'
+
+
+通过搜索获取列表
+解密这三个参数
+uifid
+msToken
+a_bogus
