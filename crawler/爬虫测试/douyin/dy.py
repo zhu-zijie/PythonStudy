@@ -29,7 +29,7 @@ for page in range(2):
         # 规避几个特殊符号
         name = re.sub(r'[\/:*?"<>|]', '_', name)
         video_url = aweme['video']['play_addr']['url_list'][0]
-        with open(f'data/{name}.mp4', mode='wb') as file:
+        with open(f'../data/{name}.mp4', mode='wb') as file:
             response = requests.get(video_url, headers=headers)
             file.write(response.content)
         print(name + "   保存完毕！")
