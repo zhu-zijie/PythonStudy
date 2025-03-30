@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="add code">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot文件/成绩表2.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="add code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,12 +39,12 @@
     &quot;assignee&quot;: &quot;zhu-zijie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/zhu-zijie/PythonStudy.git&quot;,
-    &quot;accountId&quot;: &quot;5ad1e904-4a07-4071-91e3-8da51f339baf&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/zhu-zijie/PythonStudy.git",
+    "accountId": "3e4467b6-5eed-4143-89ef-23adc284e075"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -274,6 +270,7 @@
       <workItem from="1742794312832" duration="18436000" />
       <workItem from="1742984126126" duration="78000" />
       <workItem from="1742984211413" duration="8750000" />
+      <workItem from="1743317204160" duration="501000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
