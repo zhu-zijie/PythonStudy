@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="add code" />
+    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="add code">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025_3_24,_17_52_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025_3_24__17_52__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,12 +44,12 @@
     &quot;assignee&quot;: &quot;zhu-zijie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/zhu-zijie/PythonStudy.git",
-    "accountId": "3e4467b6-5eed-4143-89ef-23adc284e075"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zhu-zijie/PythonStudy.git&quot;,
+    &quot;accountId&quot;: &quot;3e4467b6-5eed-4143-89ef-23adc284e075&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -270,7 +275,8 @@
       <workItem from="1742794312832" duration="18436000" />
       <workItem from="1742984126126" duration="78000" />
       <workItem from="1742984211413" duration="8750000" />
-      <workItem from="1743317204160" duration="501000" />
+      <workItem from="1743317204160" duration="796000" />
+      <workItem from="1743492798305" duration="802000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
@@ -320,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742832900538</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add code">
+      <option name="closed" value="true" />
+      <created>1743317801574</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743317801574</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
