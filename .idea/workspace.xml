@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="add code">
-      <change afterPath="$PROJECT_DIR$/crawler/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pandas文件/日期格式的转换.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ds.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numpy文件/切片操作.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numpy文件/创建数组.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numpy文件/数据类型.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numpy文件/数组操作.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PythonStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonStudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pandas文件/pandas初步.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pandas文件/pandas初步.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pandas文件/创建DataFrame对象.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pandas文件/创建DataFrame对象.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/plot文件/绘制简单图表.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -74,6 +79,7 @@
     &quot;Python.12345.executor&quot;: &quot;Run&quot;,
     &quot;Python.chart.executor&quot;: &quot;Run&quot;,
     &quot;Python.docx_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ds.executor&quot;: &quot;Run&quot;,
     &quot;Python.dy.executor&quot;: &quot;Run&quot;,
     &quot;Python.employee.executor&quot;: &quot;Run&quot;,
     &quot;Python.grade.executor&quot;: &quot;Run&quot;,
@@ -84,7 +90,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;JSON-Groovy.json.groovy&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/zhuzijie/PycharmProjects/PythonStudy/crawler&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -107,29 +113,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
-    <configuration name="chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crawler/test05" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/test05/chart.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="docx_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="ENV_FILES" value="" />
@@ -145,6 +128,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/test05/docx_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ds.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,10 +231,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.ds" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.employee" />
         <item itemvalue="Python.docx_test" />
-        <item itemvalue="Python.chart" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +288,13 @@
       <workItem from="1743492798305" duration="7894000" />
       <workItem from="1743574103404" duration="152000" />
       <workItem from="1743574260318" duration="5282000" />
-      <workItem from="1743670830549" duration="4483000" />
+      <workItem from="1743670830549" duration="5284000" />
+      <workItem from="1743944191508" duration="2395000" />
+      <workItem from="1744098405430" duration="23000" />
+      <workItem from="1744125545970" duration="1136000" />
+      <workItem from="1744177643207" duration="226000" />
+      <workItem from="1744179999877" duration="9238000" />
+      <workItem from="1744436872516" duration="191000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
@@ -348,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743495163781</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add code">
+      <option name="closed" value="true" />
+      <created>1743679396152</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743679396152</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,11 +394,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonStudy$123.coverage" NAME="123 Coverage Results" MODIFIED="1734853743204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试" />
+    <SUITE FILE_PATH="coverage/PythonStudy$ds.coverage" NAME="ds Coverage Results" MODIFIED="1743946333975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonStudy$chart.coverage" NAME="chart Coverage Results" MODIFIED="1741959768648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1742013377468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/PythonStudy$employee.coverage" NAME="employee Coverage Results" MODIFIED="1741964922605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$12345.coverage" NAME="12345 Coverage Results" MODIFIED="1734959920377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试" />
-    <SUITE FILE_PATH="coverage/PythonStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1743575244931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
+    <SUITE FILE_PATH="coverage/PythonStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1744191813104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/PythonStudy$docx_test.coverage" NAME="docx_test Coverage Results" MODIFIED="1741961665249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$grade.coverage" NAME="grade Coverage Results" MODIFIED="1741956973885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$dy.coverage" NAME="dy Coverage Results" MODIFIED="1734943052113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试/douyin" />
