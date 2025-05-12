@@ -162,6 +162,24 @@ cython_debug/
 *.dat
 *.db
 *.sqlite
+*.json
+*.xml
+*.yaml
+*.yml
+*.pickle
+*.pkl
+*.parquet
+*.hdf5
+*.h5
+*.feather
+*.msgpack
+*.dta
+*.sav
+*.sas7bdat
+*.rds
+*.rdata
+*.mat
+*.npz
 
 # Image files
 *.jpg
