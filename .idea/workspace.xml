@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="refactor: update workspace and add new data analysis notebooks">
-      <change afterPath="$PROJECT_DIR$/图论/graph_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/图论/点度正则图.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/图论/点边生成图.py" afterDir="false" />
+    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="feat: add graph generation utilities and visualization functions">
+      <change afterPath="$PROJECT_DIR$/airport.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +70,7 @@
     "Node.js.12346.js.executor": "Run",
     "Python.123.executor": "Run",
     "Python.12345.executor": "Run",
+    "Python.airport.executor": "Run",
     "Python.chart.executor": "Run",
     "Python.docx_test.executor": "Run",
     "Python.ds.executor": "Run",
@@ -82,6 +80,7 @@
     "Python.grade_test.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
+    "Python.xxxx.executor": "Run",
     "Python.分治法.executor": "Debug",
     "Python.动态规划.executor": "Run",
     "Python.多线程.executor": "Run",
@@ -119,7 +118,7 @@
       <recent name="$PROJECT_DIR$/crawler/爬虫测试/wangyiyun" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.点边生成图">
+  <component name="RunManager" selected="Python.airport">
     <configuration name="多进程" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="ENV_FILES" value="" />
@@ -327,10 +326,56 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="airport" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/airport.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xxxx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/xxxx.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.点边生成图" />
-        <item itemvalue="Python.点度正则图" />
+        <item itemvalue="Python.airport" />
+        <item itemvalue="Python.xxxx" />
         <item itemvalue="Python.多进程" />
       </list>
     </recent_temporary>
@@ -426,7 +471,8 @@
       <workItem from="1746962335274" duration="3408000" />
       <workItem from="1747037833026" duration="309000" />
       <workItem from="1747038146106" duration="6543000" />
-      <workItem from="1747044725403" duration="11326000" />
+      <workItem from="1747044725403" duration="11993000" />
+      <workItem from="1747322293587" duration="1607000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
@@ -636,7 +682,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747038097086</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: add graph generation utilities and visualization functions">
+      <option name="closed" value="true" />
+      <created>1747064043500</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1747064043500</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,13 +725,16 @@
     <MESSAGE value="update zhengqi" />
     <MESSAGE value="update zhengq" />
     <MESSAGE value="refactor: update workspace and add new data analysis notebooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update workspace and add new data analysis notebooks" />
+    <MESSAGE value="feat: add graph generation utilities and visualization functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add graph generation utilities and visualization functions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonStudy$grade_test.coverage" NAME="grade_test Coverage Results" MODIFIED="1741957378059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$123.coverage" NAME="123 Coverage Results" MODIFIED="1734853743204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试" />
     <SUITE FILE_PATH="coverage/PythonStudy$chart.coverage" NAME="chart Coverage Results" MODIFIED="1741959768648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/test05" />
     <SUITE FILE_PATH="coverage/PythonStudy$dy.coverage" NAME="dy Coverage Results" MODIFIED="1734943052113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试/douyin" />
+    <SUITE FILE_PATH="coverage/PythonStudy$airport.coverage" NAME="airport Coverage Results" MODIFIED="1747323627918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonStudy$xxxx.coverage" NAME="xxxx Coverage Results" MODIFIED="1747322668036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/PythonStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1742013377468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/PythonStudy$test.coverage" NAME="test Coverage Results" MODIFIED="1744538336685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler" />
     <SUITE FILE_PATH="coverage/PythonStudy$12345.coverage" NAME="12345 Coverage Results" MODIFIED="1734959920377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/爬虫测试" />
