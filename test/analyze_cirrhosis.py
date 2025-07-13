@@ -298,7 +298,7 @@ plt.tight_layout()
 plt.savefig("cirrhosis_categorical_features.png", dpi=300, bbox_inches='tight')
 plt.close()
 
-# 可视化：肝硬化与数值特征的关系（综合图1）
+# 可视化：肝硬化与数值特征的关系
 fig, axes = plt.subplots(3, 4, figsize=(24, 18))
 sns.histplot(data=df_cirrhosis, x="N_Days", hue="Status", kde=True, ax=axes[0, 0])
 sns.histplot(data=df_cirrhosis, x="Age", hue="Status", kde=True, ax=axes[0, 1])
