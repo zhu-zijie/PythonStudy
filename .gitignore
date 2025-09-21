@@ -1,5 +1,23 @@
-### Python template
-# Byte-compiled / optimized / DLL files
+# =========================
+# macOS 系统文件
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.supported
+.AppleDB
+.AppleDesktop
+*.apdisk
+
+# =========================
+# Python 编译文件
+# =========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,7 +25,26 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribution / packaging
+# =========================
+# 虚拟环境
+# =========================
+# 标准虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# 备份虚拟环境
+env.bak/
+venv.bak/
+
+# 其他工具
+.venv-python  # pdm
+.pdm-python
+
+# =========================
+# Python 打包与分发
+# =========================
 .Python
 build/
 develop-eggs/
@@ -28,17 +65,12 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
+# =========================
+# 测试与覆盖率
+# =========================
 .tox/
 .nox/
 .coverage
@@ -52,154 +84,87 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
+# =========================
 # Jupyter Notebook
+# =========================
 .ipynb_checkpoints
 
+# =========================
 # IPython
+# =========================
 profile_default/
 ipython_config.py
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# =========================
+# IDE: PyCharm
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+# 忽略工作区设置
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries/
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+# =========================
+# IDE: VS Code
+# =========================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
+# =========================
+# 环境变量文件
+# =========================
 .env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+secrets.py
+config/
+credentials.json
+token.json
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# =========================
+# 日志与数据库文件
+# =========================
+*.log
+*.sqlite
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# Data files
+# =========================
+# 数据文件
+# =========================
 *.csv
 *.xlsx
-*.xls
-*.dat
-*.db
-*.sqlite
 *.json
-*.xml
-*.yaml
-*.yml
-*.pickle
 *.pkl
+*.pickle
 *.parquet
-*.hdf5
 *.h5
-*.feather
-*.msgpack
-*.dta
-*.sav
-*.sas7bdat
-*.rds
-*.rdata
-*.mat
-*.npz
+*.hdf5
 
-# Image files
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.webp
-*.svg
-*.ico
+# =========================
+# 其他通用忽略
+# =================--------
+Thumbs.db
+.DS_Store?
+.DS_Store*
+*.swp
+*.swo
+*~
 
-# macOS
-.DS_Store
-
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
+# =========================
+# 可执行文件
+# =========================
+*.exe
+*.out
+*.app
