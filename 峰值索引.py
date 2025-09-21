@@ -36,7 +36,6 @@ def find_peak_with_largest_index2(nums1):
             index = num
     return index
 
-
 # Read input and process
 nums = [int(i) for i in input().split()]
 new_nums = find_peak_with_largest_index(nums)
