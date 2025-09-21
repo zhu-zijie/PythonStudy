@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="update test.ipynb">
-      <change afterPath="$PROJECT_DIR$/蒸汽建模/zhengqi1.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/蒸汽建模/zhengqi2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/airport.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/峰值索引.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawler/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphTheory/first.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graphTheory/草稿2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graphTheory/草稿1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/analyze_cirrhosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_cirrhosis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/analyze_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/analyze_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_stroke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model_cirrhosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_cirrhosis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/model_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_stroke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/test.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tianmao/tianmao.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/天猫建模/tianmao.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhengqi/test_data_pca.npz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhengqi/train_data_pca.npz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhengqi/zhengqi1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhengqi/zhengqi2.ipynb" beforeDir="false" />
+    <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="refactor: rename files and update README for project structure and clarity">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,7 +516,7 @@
       <workItem from="1752298322751" duration="13000" />
       <workItem from="1752318847764" duration="10538000" />
       <workItem from="1752336403162" duration="62216000" />
-      <workItem from="1758464787520" duration="422000" />
+      <workItem from="1758464787520" duration="1145000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
@@ -824,7 +806,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752472007601</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor: rename files and update README for project structure and clarity">
+      <option name="closed" value="true" />
+      <created>1758465296416</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465296416</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactor: rename files and update README for project structure and clarity">
+      <option name="closed" value="true" />
+      <created>1758465352279</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465352279</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -866,7 +864,9 @@
     <MESSAGE value="update model_cirrhosis.py, model_stroke.py" />
     <MESSAGE value="update analyze_cirrhosis.py" />
     <MESSAGE value="update test.ipynb" />
-    <option name="LAST_COMMIT_MESSAGE" value="update test.ipynb" />
+    <MESSAGE value="feat: add first.ipynb with graph generation and visualization functions" />
+    <MESSAGE value="refactor: rename files and update README for project structure and clarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: rename files and update README for project structure and clarity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
