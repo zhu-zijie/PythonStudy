@@ -5,12 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ff0f708-d089-40aa-9d30-b626b6d4180c" name="Changes" comment="update test.ipynb">
-      <change afterPath="$PROJECT_DIR$/graphTheory/first.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/111.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ds.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/蒸汽建模/zhengqi1.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/蒸汽建模/zhengqi2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airport.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/峰值索引.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphTheory/first.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graphTheory/草稿2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graphTheory/草稿1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/analyze_cirrhosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_cirrhosis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/analyze_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_heart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/analyze_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/analyze_stroke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model_cirrhosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_cirrhosis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_heart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/model_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/model_stroke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/疾病建模/test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tianmao/tianmao.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/天猫建模/tianmao.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhengqi/test_data_pca.npz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhengqi/train_data_pca.npz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhengqi/zhengqi1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhengqi/zhengqi2.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +53,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN",
-      "assignee": "zhu-zijie",
-      "author": "zhu-zijie"
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;zhu-zijie&quot;,
+      &quot;author&quot;: &quot;zhu-zijie&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "zhu-zijie",
-    "author": "zhu-zijie"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zhu-zijie&quot;,
+    &quot;author&quot;: &quot;zhu-zijie&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/zhu-zijie/PythonStudy.git&quot;,
@@ -76,96 +90,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Node.js.12346.js.executor": "Run",
-    "Python.111.executor": "Run",
-    "Python.123.executor": "Run",
-    "Python.12345.executor": "Run",
-    "Python.airport.executor": "Run",
-    "Python.analyze_cirrhosis.executor": "Run",
-    "Python.analyze_heart.executor": "Run",
-    "Python.analyze_stroke.executor": "Run",
-    "Python.chart.executor": "Run",
-    "Python.docx_test.executor": "Run",
-    "Python.ds.executor": "Run",
-    "Python.dy.executor": "Run",
-    "Python.employee.executor": "Run",
-    "Python.fix_certificates.executor": "Run",
-    "Python.grade.executor": "Run",
-    "Python.grade_test.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.manage.executor": "Run",
-    "Python.model_cirrhosis.executor": "Run",
-    "Python.model_heart.executor": "Run",
-    "Python.model_stroke.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.tu.executor": "Run",
-    "Python.xxxx.executor": "Run",
-    "Python.分治法.executor": "Debug",
-    "Python.动态规划.executor": "Run",
-    "Python.多线程.executor": "Run",
-    "Python.多进程.executor": "Run",
-    "Python.异步.executor": "Run",
-    "Python.异步请求.executor": "Run",
-    "Python.扑克游戏.executor": "Run",
-    "Python.点度正则图.executor": "Run",
-    "Python.点边生成图.executor": "Run",
-    "Python.试探法.executor": "Run",
-    "Python.面向对象案例.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/zhuzijie/PycharmProjects/PythonStudy/test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Node.js.12346.js.executor&quot;: &quot;Run&quot;,
+    &quot;Python.111.executor&quot;: &quot;Run&quot;,
+    &quot;Python.123.executor&quot;: &quot;Run&quot;,
+    &quot;Python.12345.executor&quot;: &quot;Run&quot;,
+    &quot;Python.airport.executor&quot;: &quot;Run&quot;,
+    &quot;Python.analyze_cirrhosis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.analyze_heart.executor&quot;: &quot;Run&quot;,
+    &quot;Python.analyze_stroke.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chart.executor&quot;: &quot;Run&quot;,
+    &quot;Python.docx_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ds.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dy.executor&quot;: &quot;Run&quot;,
+    &quot;Python.employee.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fix_certificates.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grade.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grade_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_cirrhosis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_heart.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_stroke.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xxxx.executor&quot;: &quot;Run&quot;,
+    &quot;Python.分治法.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.动态规划.executor&quot;: &quot;Run&quot;,
+    &quot;Python.多线程.executor&quot;: &quot;Run&quot;,
+    &quot;Python.多进程.executor&quot;: &quot;Run&quot;,
+    &quot;Python.异步.executor&quot;: &quot;Run&quot;,
+    &quot;Python.异步请求.executor&quot;: &quot;Run&quot;,
+    &quot;Python.扑克游戏.executor&quot;: &quot;Run&quot;,
+    &quot;Python.点度正则图.executor&quot;: &quot;Run&quot;,
+    &quot;Python.点边生成图.executor&quot;: &quot;Run&quot;,
+    &quot;Python.试探法.executor&quot;: &quot;Run&quot;,
+    &quot;Python.面向对象案例.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;JSON-Groovy.json.groovy&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zhuzijie/PycharmProjects/PythonStudy/test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/crawler" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/graphTheory" />
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/pandas文件" />
       <recent name="$PROJECT_DIR$/crawler/爬虫测试/douyin" />
-      <recent name="$PROJECT_DIR$/crawler/爬虫测试/wangyiyun" />
     </key>
   </component>
   <component name="RunManager" selected="Python.111">
-    <configuration name="111" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/111.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="点边生成图" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="ENV_FILES" value="" />
@@ -181,6 +173,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/图论/点边生成图.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="111" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/111.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -409,8 +424,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.74" />
-        <option value="bundled-python-sdk-657d8234b839-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.28293.52" />
+        <option value="bundled-python-sdk-c84de207d46e-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.28293.52" />
       </set>
     </attachedChunks>
   </component>
@@ -519,6 +534,7 @@
       <workItem from="1752298322751" duration="13000" />
       <workItem from="1752318847764" duration="10538000" />
       <workItem from="1752336403162" duration="62216000" />
+      <workItem from="1758464787520" duration="422000" />
     </task>
     <task id="LOCAL-00001" summary="delete bank.py">
       <option name="closed" value="true" />
@@ -856,7 +872,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
-          <url>file://$PROJECT_DIR$/test.ipynb</url>
+          <url>file://$PROJECT_DIR$/graphTheory/草稿1.ipynb</url>
           <line>404</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
