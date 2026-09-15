@@ -66,15 +66,14 @@ sql = """
       (id, name, cover, categories, published_at, minute, score, regions, raw_json)
       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) ON DUPLICATE KEY
       UPDATE
-          name =
-      VALUES (name), cover =
-      VALUES (cover), categories =
-      VALUES (categories), published_at =
-      VALUES (published_at), minute =
-      VALUES (minute), score =
-      VALUES (score), regions =
-      VALUES (regions), raw_json =
-      VALUES (raw_json) \
+          name =VALUES (name), 
+          cover =VALUES (cover), 
+          categories =VALUES (categories), 
+          published_at =VALUES (published_at), 
+          minute =VALUES (minute), 
+          score =VALUES (score), 
+          regions =VALUES (regions), 
+          raw_json =VALUES (raw_json)
       """
 
 rows = []
